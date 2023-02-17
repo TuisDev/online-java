@@ -498,7 +498,7 @@ public class frmMakingPurchasesWatson extends javax.swing.JFrame {
         couponCode = txtCoupon.getText();
         
         // Get the total from the form
-        total = Double.parseDouble(lblTotal.getText().replace("$", ""));
+        total = Double.parseDouble(lblTotal.getText().replace("$", "")); // Remove $ symbol
         
         // Add a 10% discount if the code is correct
         if (couponCode.equals(CORRECT_CODE)) {
@@ -567,12 +567,12 @@ public class frmMakingPurchasesWatson extends javax.swing.JFrame {
         
         // Calcualte total, discount, subtotal and grand total
         total = round(robotDogCost + yellowDogCost + blackDogCost + smallDogCost);
-        discount = Double.parseDouble(lblDiscount.getText().replace("%", "")) / 100;
+        discount = Double.parseDouble(lblDiscount.getText().replace("%", "")) / 100; // Remove % symbol
         subTotal = round(total + total * discount);
         tax = round(subTotal * TAX_RATE);
         grandTotal = round(subTotal + tax);
         
-        // output results
+        // Output results
         lblRobotDogCost.setText("$"+String.valueOf(robotDogCost));
         lblYellowDogCost.setText("$"+String.valueOf(yellowDogCost));
         lblBlackDogCost.setText("$"+String.valueOf(blackDogCost));
