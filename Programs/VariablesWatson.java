@@ -20,7 +20,7 @@ public class VariablesWatson {
         boolean coldOut = true;
         
         double temperature; //(degrees C)
-        temperature = 15 + 5000 / 1000 * -1.98; //Standard temperature deviation with altitude
+        temperature = 15 + heightASL / 1000 * -1.98; //Standard temperature deviation with altitude
         
         System.out.println("The temperature is approixmately " + temperature + " degrees Celsuis at " + location + ".");
         System.out.println("Is it cold out?: " + coldOut + ".");
