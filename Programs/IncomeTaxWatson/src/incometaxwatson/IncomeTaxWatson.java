@@ -11,15 +11,20 @@ import java.util.Scanner;
  * @author jijwa
  */
 public class IncomeTaxWatson {
-
+    // Methods
+    static double round(double unRounded) {
+        return (double)((int)(unRounded * 100 + 0.5)) / 100; // Multiplies by 100, roudns to 0 decimal places, divides by 100. 
+    }
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        
+        // Instantiate the scanner
         Scanner keyedInput = new Scanner(System.in);
         
-        //Variables
+        // Variables
         double income;
         double remainingIncome;
 
@@ -27,17 +32,21 @@ public class IncomeTaxWatson {
         double provincialTax = 0;
         double totalTax;
         
+        // Constants
         final double[] FEDERAL_TAX_RATES = {0.33, 0.29, 0.26, 0.205, 0.15};
         final double[] PROVINCIAL_TAX_RATES = {0.1316, 0.1216, 0.1116, 0.0915, 0.0505};
         
         final int[] FEDERAL_TAX_BRACKETS = {235675, 165430, 106717, 53359, 0};
         final int[] PROVINCIAL_TAX_BRACKETS = {220000, 150000, 98463, 49231, 0};
         
-        //ask for input
+        // Welcome the user
+        System.out.println("Welcome to the Ontario Income Tax Estimator!");
+        
+        // Ask for input
         System.out.println("How much taxable income will you make this year?: ");
         income = keyedInput.nextDouble();
         
-        //Federal
+        // Federal Tax Calculations
         int i = 0;
         remainingIncome = income;
         for (double taxRate : FEDERAL_TAX_RATES) {
@@ -49,7 +58,7 @@ public class IncomeTaxWatson {
             i++;
         }
         
-        //Provincial
+        // Provincial Tax Calculations
         i = 0;
         remainingIncome = income;
         for (double taxRate : PROVINCIAL_TAX_RATES) {
@@ -61,11 +70,13 @@ public class IncomeTaxWatson {
             i++;
         }
         
+        // Total Calculations
         totalTax = provincialTax + federalTax;
         
-        System.out.println("The federal protion of the tax is $" + round(federalTax) + ".");
-        System.out.println("The provincial portion of the tax is $" + provincialTax + ".");
-        System.out.println("The full income tax is $" + totalTax + ".");
+        // Output tax
+        System.out.println("The federal portion of the tax is $" + round(federalTax) + ".");
+        System.out.println("The provincial portion of the tax is $" + round(provincialTax) + ".");
+        System.out.println("The total income tax is $" + round(totalTax) + ".");
     }
     
 }

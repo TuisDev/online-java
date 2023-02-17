@@ -18,20 +18,29 @@ public class WaterAndComputerManufacturingWatson {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-     
         // TODO code application logic here
+        
+        // Instantiate the scanner
         Scanner keyedInput = new Scanner(System.in);
         
+        // Variables
         double waterUsed;
         double numberOfComputers;
 
+        // Constants
         final double WATER_PER_COMBO = 1.5;
         
+        // Welcome the user
+        System.out.println("Welcome to the electronic water use estimator!");
+        
+        // Ask for input
         System.out.println("How many computer and monitor combos do you own?: ");
         numberOfComputers = keyedInput.nextDouble();
         
+        // Calculate water used
         waterUsed = round(numberOfComputers * WATER_PER_COMBO);
         
+        // Ouput water used
         System.out.println(waterUsed + " tons of water were used to make those computers and monitors!");
         
         
