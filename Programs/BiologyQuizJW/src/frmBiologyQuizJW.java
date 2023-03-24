@@ -9,11 +9,22 @@
  */
 public class frmBiologyQuizJW extends javax.swing.JFrame {
 
+    // Methods
+    double round(double unRoundedNum) {
+        return (double)Math.round(unRoundedNum * 10) / 10;
+    }
+    
+    // Global Variables
+    int numCorrect;
+    int numIncorrect;
+
+
     /**
      * Creates new form frmBiologyQuizJW
      */
     public frmBiologyQuizJW() {
         initComponents();
+        getContentPane().setBackground(new java.awt.Color(100, 155, 15));
     }
 
     /**
@@ -25,22 +36,1295 @@ public class frmBiologyQuizJW extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        questionOne = new javax.swing.ButtonGroup();
+        questionTwo = new javax.swing.ButtonGroup();
+        questionThree = new javax.swing.ButtonGroup();
+        questionFour = new javax.swing.ButtonGroup();
+        questionFive = new javax.swing.ButtonGroup();
+        jProgressBar1 = new javax.swing.JProgressBar();
+        lblTitle = new javax.swing.JLabel();
+        pblMain = new javax.swing.JTabbedPane();
+        pnlWelcome = new javax.swing.JPanel();
+        btnStartQuiz = new javax.swing.JButton();
+        lblIns1 = new javax.swing.JLabel();
+        lblInst2 = new javax.swing.JLabel();
+        pnlQuestionOne = new javax.swing.JPanel();
+        lblQuestionOneTitle = new javax.swing.JLabel();
+        radQ1Ans1 = new javax.swing.JRadioButton();
+        radQ1Ans2 = new javax.swing.JRadioButton();
+        radQ1Ans3 = new javax.swing.JRadioButton();
+        radQ1Ans4 = new javax.swing.JRadioButton();
+        btnQ1Next = new javax.swing.JButton();
+        btnQ1Submit = new javax.swing.JButton();
+        pnlQuestionTwo = new javax.swing.JPanel();
+        lblQuestionTwoTitle = new javax.swing.JLabel();
+        radQ2Ans4 = new javax.swing.JRadioButton();
+        radQ2Ans3 = new javax.swing.JRadioButton();
+        radQ2Ans2 = new javax.swing.JRadioButton();
+        radQ2Ans1 = new javax.swing.JRadioButton();
+        btnQ2Submit = new javax.swing.JButton();
+        btnQ2Next = new javax.swing.JButton();
+        pnlQuestionThree = new javax.swing.JPanel();
+        lblQuestionThreeTitle = new javax.swing.JLabel();
+        radQ3Ans4 = new javax.swing.JRadioButton();
+        radQ3Ans3 = new javax.swing.JRadioButton();
+        radQ3Ans2 = new javax.swing.JRadioButton();
+        radQ3Ans1 = new javax.swing.JRadioButton();
+        btnQ3Submit = new javax.swing.JButton();
+        btnQ3Next = new javax.swing.JButton();
+        pnlQuestionFour = new javax.swing.JPanel();
+        lblQuestionFourTitle = new javax.swing.JLabel();
+        radQ4Ans4 = new javax.swing.JRadioButton();
+        radQ4Ans3 = new javax.swing.JRadioButton();
+        radQ4Ans2 = new javax.swing.JRadioButton();
+        radQ4Ans1 = new javax.swing.JRadioButton();
+        btnQ4Submit = new javax.swing.JButton();
+        btnQ4Next = new javax.swing.JButton();
+        pnlQuestionFive = new javax.swing.JPanel();
+        lblQuestionFiveTitle = new javax.swing.JLabel();
+        radQ5Ans4 = new javax.swing.JRadioButton();
+        radQ5Ans3 = new javax.swing.JRadioButton();
+        radQ5Ans2 = new javax.swing.JRadioButton();
+        radQ5Ans1 = new javax.swing.JRadioButton();
+        btnQ5Submit = new javax.swing.JButton();
+        btnQ5Next = new javax.swing.JButton();
+        pnlResults = new javax.swing.JPanel();
+        lblQ2ResultsHeader = new javax.swing.JLabel();
+        lblQ3ResultsHeader = new javax.swing.JLabel();
+        lblQ4ResultsHeader = new javax.swing.JLabel();
+        lblQ1ResultsHeader = new javax.swing.JLabel();
+        lblCorrect = new javax.swing.JLabel();
+        lblQ2Results = new javax.swing.JLabel();
+        lblQ3Results = new javax.swing.JLabel();
+        lblQ4Results = new javax.swing.JLabel();
+        lblQ5ResultsHeader = new javax.swing.JLabel();
+        lblQ5Results = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        lblCorrectHeader = new javax.swing.JLabel();
+        lblPercentageHeader = new javax.swing.JLabel();
+        lblIncorrectHeader = new javax.swing.JLabel();
+        lblIncorrect = new javax.swing.JLabel();
+        lblPercentage = new javax.swing.JLabel();
+        lblQ1Results = new javax.swing.JLabel();
+        lblFooterCorrectHeader = new javax.swing.JLabel();
+        lblFooterCorrect = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Biology Quiz");
+
+        jProgressBar1.setMaximum(6);
+
+        lblTitle.setBackground(new java.awt.Color(255, 255, 255));
+        lblTitle.setFont(new java.awt.Font("Sylfaen", 0, 36)); // NOI18N
+        lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTitle.setText("Biology Quiz");
+
+        pblMain.setBackground(new java.awt.Color(255, 255, 255));
+        pblMain.setEnabled(false);
+
+        pnlWelcome.setBackground(new java.awt.Color(255, 255, 255));
+
+        btnStartQuiz.setFont(new java.awt.Font("Sylfaen", 0, 24)); // NOI18N
+        btnStartQuiz.setText("Start Quiz");
+        btnStartQuiz.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnStartQuiz.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        btnStartQuiz.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnStartQuizActionPerformed(evt);
+            }
+        });
+
+        lblIns1.setFont(new java.awt.Font("Sylfaen", 0, 24)); // NOI18N
+        lblIns1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblIns1.setText("Welcome to the biology quiz!");
+
+        lblInst2.setFont(new java.awt.Font("Sylfaen", 0, 20)); // NOI18N
+        lblInst2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblInst2.setText("Select an answer, hit submit and hover over the questions to see which answers are correct!");
+
+        javax.swing.GroupLayout pnlWelcomeLayout = new javax.swing.GroupLayout(pnlWelcome);
+        pnlWelcome.setLayout(pnlWelcomeLayout);
+        pnlWelcomeLayout.setHorizontalGroup(
+            pnlWelcomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlWelcomeLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnStartQuiz, javax.swing.GroupLayout.PREFERRED_SIZE, 361, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(lblInst2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(lblIns1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        pnlWelcomeLayout.setVerticalGroup(
+            pnlWelcomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlWelcomeLayout.createSequentialGroup()
+                .addGap(94, 94, 94)
+                .addComponent(lblIns1)
+                .addGap(18, 18, 18)
+                .addComponent(lblInst2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 141, Short.MAX_VALUE)
+                .addComponent(btnStartQuiz, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(15, 15, 15))
+        );
+
+        pblMain.addTab("Welcome", pnlWelcome);
+
+        pnlQuestionOne.setBackground(new java.awt.Color(255, 255, 255));
+
+        lblQuestionOneTitle.setFont(new java.awt.Font("Sylfaen", 0, 24)); // NOI18N
+        lblQuestionOneTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblQuestionOneTitle.setText("What are the Properties of Eubacteria?");
+
+        radQ1Ans1.setBackground(new java.awt.Color(204, 0, 0));
+        questionOne.add(radQ1Ans1);
+        radQ1Ans1.setFont(new java.awt.Font("Sylfaen", 0, 18)); // NOI18N
+        radQ1Ans1.setText("Eukaryotic, Mixed Cell Wall, Mostly Unicellular, Auto/Heterotrophic, Aquatic");
+        radQ1Ans1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radQ1Ans1ActionPerformed(evt);
+            }
+        });
+
+        radQ1Ans2.setBackground(new java.awt.Color(204, 0, 0));
+        questionOne.add(radQ1Ans2);
+        radQ1Ans2.setFont(new java.awt.Font("Sylfaen", 0, 18)); // NOI18N
+        radQ1Ans2.setText("Eukaryotic, Cell Wall with Cellulose, Multicellular, Autotrophic, Terrestrial");
+        radQ1Ans2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radQ1Ans2ActionPerformed(evt);
+            }
+        });
+
+        radQ1Ans3.setBackground(new java.awt.Color(102, 204, 0));
+        questionOne.add(radQ1Ans3);
+        radQ1Ans3.setFont(new java.awt.Font("Sylfaen", 0, 18)); // NOI18N
+        radQ1Ans3.setText("Prokaryotic, Cell Wall with Peptidoglycan, Unicellular, Auto/Heterotrophic, found Everywhere");
+        radQ1Ans3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radQ1Ans3ActionPerformed(evt);
+            }
+        });
+
+        radQ1Ans4.setBackground(new java.awt.Color(204, 0, 0));
+        questionOne.add(radQ1Ans4);
+        radQ1Ans4.setFont(new java.awt.Font("Sylfaen", 0, 18)); // NOI18N
+        radQ1Ans4.setText("Prokaryotic, Cell Wall, Unicellular, Auto/Heterotrophic, Live in Extremes");
+        radQ1Ans4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radQ1Ans4ActionPerformed(evt);
+            }
+        });
+
+        btnQ1Next.setText("Next");
+        btnQ1Next.setEnabled(false);
+        btnQ1Next.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnQ1NextActionPerformed(evt);
+            }
+        });
+
+        btnQ1Submit.setText("Submit");
+        btnQ1Submit.setEnabled(false);
+        btnQ1Submit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnQ1SubmitActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout pnlQuestionOneLayout = new javax.swing.GroupLayout(pnlQuestionOne);
+        pnlQuestionOne.setLayout(pnlQuestionOneLayout);
+        pnlQuestionOneLayout.setHorizontalGroup(
+            pnlQuestionOneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlQuestionOneLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblQuestionOneTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlQuestionOneLayout.createSequentialGroup()
+                .addContainerGap(133, Short.MAX_VALUE)
+                .addGroup(pnlQuestionOneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlQuestionOneLayout.createSequentialGroup()
+                        .addGap(189, 189, 189)
+                        .addComponent(btnQ1Submit, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(210, 210, 210)
+                        .addComponent(btnQ1Next))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlQuestionOneLayout.createSequentialGroup()
+                        .addGroup(pnlQuestionOneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(radQ1Ans3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(radQ1Ans1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(radQ1Ans2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(radQ1Ans4, javax.swing.GroupLayout.PREFERRED_SIZE, 727, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 130, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        pnlQuestionOneLayout.setVerticalGroup(
+            pnlQuestionOneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlQuestionOneLayout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addComponent(lblQuestionOneTitle)
+                .addGap(50, 50, 50)
+                .addComponent(radQ1Ans1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(radQ1Ans2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(radQ1Ans3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(radQ1Ans4)
+                .addGap(50, 50, 50)
+                .addGroup(pnlQuestionOneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnQ1Next)
+                    .addComponent(btnQ1Submit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+
+        pblMain.addTab("Question 1", pnlQuestionOne);
+
+        pnlQuestionTwo.setBackground(new java.awt.Color(255, 255, 255));
+
+        lblQuestionTwoTitle.setFont(new java.awt.Font("Sylfaen", 0, 24)); // NOI18N
+        lblQuestionTwoTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblQuestionTwoTitle.setText("What is a Property of Living Things?");
+
+        radQ2Ans4.setBackground(new java.awt.Color(102, 204, 0));
+        questionTwo.add(radQ2Ans4);
+        radQ2Ans4.setFont(new java.awt.Font("Sylfaen", 0, 18)); // NOI18N
+        radQ2Ans4.setText("Adapt to their environment");
+        radQ2Ans4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radQ2Ans4ActionPerformed(evt);
+            }
+        });
+
+        radQ2Ans3.setBackground(new java.awt.Color(204, 0, 0));
+        questionTwo.add(radQ2Ans3);
+        radQ2Ans3.setFont(new java.awt.Font("Sylfaen", 0, 18)); // NOI18N
+        radQ2Ans3.setText("Develops intelligence");
+        radQ2Ans3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radQ2Ans3ActionPerformed(evt);
+            }
+        });
+
+        radQ2Ans2.setBackground(new java.awt.Color(204, 0, 0));
+        questionTwo.add(radQ2Ans2);
+        radQ2Ans2.setFont(new java.awt.Font("Sylfaen", 0, 18)); // NOI18N
+        radQ2Ans2.setText("Has a nucleus");
+        radQ2Ans2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radQ2Ans2ActionPerformed(evt);
+            }
+        });
+
+        radQ2Ans1.setBackground(new java.awt.Color(204, 0, 0));
+        questionTwo.add(radQ2Ans1);
+        radQ2Ans1.setFont(new java.awt.Font("Sylfaen", 0, 18)); // NOI18N
+        radQ2Ans1.setText("Has udders");
+        radQ2Ans1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radQ2Ans1ActionPerformed(evt);
+            }
+        });
+
+        btnQ2Submit.setText("Submit");
+        btnQ2Submit.setEnabled(false);
+        btnQ2Submit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnQ2SubmitActionPerformed(evt);
+            }
+        });
+
+        btnQ2Next.setText("Next");
+        btnQ2Next.setEnabled(false);
+        btnQ2Next.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnQ2NextActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout pnlQuestionTwoLayout = new javax.swing.GroupLayout(pnlQuestionTwo);
+        pnlQuestionTwo.setLayout(pnlQuestionTwoLayout);
+        pnlQuestionTwoLayout.setHorizontalGroup(
+            pnlQuestionTwoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlQuestionTwoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pnlQuestionTwoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblQuestionTwoTitle, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlQuestionTwoLayout.createSequentialGroup()
+                        .addGap(0, 359, Short.MAX_VALUE)
+                        .addComponent(btnQ2Submit, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(210, 210, 210)
+                        .addComponent(btnQ2Next))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlQuestionTwoLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(pnlQuestionTwoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(radQ2Ans3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(radQ2Ans1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(radQ2Ans2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(radQ2Ans4))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        pnlQuestionTwoLayout.setVerticalGroup(
+            pnlQuestionTwoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlQuestionTwoLayout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addComponent(lblQuestionTwoTitle)
+                .addGap(50, 50, 50)
+                .addComponent(radQ2Ans1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(radQ2Ans2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(radQ2Ans3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(radQ2Ans4)
+                .addGap(50, 50, 50)
+                .addGroup(pnlQuestionTwoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnQ2Next)
+                    .addComponent(btnQ2Submit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+
+        pblMain.addTab("Question 2", pnlQuestionTwo);
+
+        pnlQuestionThree.setBackground(new java.awt.Color(255, 255, 255));
+
+        lblQuestionThreeTitle.setFont(new java.awt.Font("Sylfaen", 0, 24)); // NOI18N
+        lblQuestionThreeTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblQuestionThreeTitle.setText("What is Biology?");
+
+        radQ3Ans4.setBackground(new java.awt.Color(204, 0, 0));
+        questionThree.add(radQ3Ans4);
+        radQ3Ans4.setFont(new java.awt.Font("Sylfaen", 0, 18)); // NOI18N
+        radQ3Ans4.setText("The study of the human body");
+        radQ3Ans4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radQ3Ans4ActionPerformed(evt);
+            }
+        });
+
+        radQ3Ans3.setBackground(new java.awt.Color(204, 0, 0));
+        questionThree.add(radQ3Ans3);
+        radQ3Ans3.setFont(new java.awt.Font("Sylfaen", 0, 18)); // NOI18N
+        radQ3Ans3.setText("The science of classifying organisms");
+        radQ3Ans3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radQ3Ans3ActionPerformed(evt);
+            }
+        });
+
+        radQ3Ans2.setBackground(new java.awt.Color(102, 204, 0));
+        questionThree.add(radQ3Ans2);
+        radQ3Ans2.setFont(new java.awt.Font("Sylfaen", 0, 18)); // NOI18N
+        radQ3Ans2.setText("The study of living things");
+        radQ3Ans2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radQ3Ans2ActionPerformed(evt);
+            }
+        });
+
+        radQ3Ans1.setBackground(new java.awt.Color(204, 0, 0));
+        questionThree.add(radQ3Ans1);
+        radQ3Ans1.setFont(new java.awt.Font("Sylfaen", 0, 18)); // NOI18N
+        radQ3Ans1.setText("The study of plant science");
+        radQ3Ans1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radQ3Ans1ActionPerformed(evt);
+            }
+        });
+
+        btnQ3Submit.setText("Submit");
+        btnQ3Submit.setEnabled(false);
+        btnQ3Submit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnQ3SubmitActionPerformed(evt);
+            }
+        });
+
+        btnQ3Next.setText("Next");
+        btnQ3Next.setEnabled(false);
+        btnQ3Next.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnQ3NextActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout pnlQuestionThreeLayout = new javax.swing.GroupLayout(pnlQuestionThree);
+        pnlQuestionThree.setLayout(pnlQuestionThreeLayout);
+        pnlQuestionThreeLayout.setHorizontalGroup(
+            pnlQuestionThreeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlQuestionThreeLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pnlQuestionThreeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlQuestionThreeLayout.createSequentialGroup()
+                        .addGap(0, 359, Short.MAX_VALUE)
+                        .addComponent(btnQ3Submit, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(210, 210, 210)
+                        .addComponent(btnQ3Next))
+                    .addGroup(pnlQuestionThreeLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(pnlQuestionThreeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(radQ3Ans3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(radQ3Ans2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(radQ3Ans1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(radQ3Ans4, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(lblQuestionThreeTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        pnlQuestionThreeLayout.setVerticalGroup(
+            pnlQuestionThreeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlQuestionThreeLayout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addComponent(lblQuestionThreeTitle)
+                .addGap(50, 50, 50)
+                .addComponent(radQ3Ans1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(radQ3Ans2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(radQ3Ans3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(radQ3Ans4)
+                .addGap(50, 50, 50)
+                .addGroup(pnlQuestionThreeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnQ3Next)
+                    .addComponent(btnQ3Submit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(19, 19, 19))
+        );
+
+        pblMain.addTab("Question 3", pnlQuestionThree);
+
+        pnlQuestionFour.setBackground(new java.awt.Color(255, 255, 255));
+
+        lblQuestionFourTitle.setFont(new java.awt.Font("Sylfaen", 0, 24)); // NOI18N
+        lblQuestionFourTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblQuestionFourTitle.setText("What is the Phylum for Human Beings");
+
+        radQ4Ans4.setBackground(new java.awt.Color(204, 0, 0));
+        questionFour.add(radQ4Ans4);
+        radQ4Ans4.setFont(new java.awt.Font("Sylfaen", 0, 18)); // NOI18N
+        radQ4Ans4.setText("Primate");
+        radQ4Ans4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radQ4Ans4ActionPerformed(evt);
+            }
+        });
+
+        radQ4Ans3.setBackground(new java.awt.Color(204, 0, 0));
+        questionFour.add(radQ4Ans3);
+        radQ4Ans3.setFont(new java.awt.Font("Sylfaen", 0, 18)); // NOI18N
+        radQ4Ans3.setText("Mammalia");
+        radQ4Ans3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radQ4Ans3ActionPerformed(evt);
+            }
+        });
+
+        radQ4Ans2.setBackground(new java.awt.Color(204, 0, 0));
+        questionFour.add(radQ4Ans2);
+        radQ4Ans2.setFont(new java.awt.Font("Sylfaen", 0, 18)); // NOI18N
+        radQ4Ans2.setText("Hominidae");
+        radQ4Ans2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radQ4Ans2ActionPerformed(evt);
+            }
+        });
+
+        radQ4Ans1.setBackground(new java.awt.Color(102, 204, 0));
+        questionFour.add(radQ4Ans1);
+        radQ4Ans1.setFont(new java.awt.Font("Sylfaen", 0, 18)); // NOI18N
+        radQ4Ans1.setText("Chordata");
+        radQ4Ans1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radQ4Ans1ActionPerformed(evt);
+            }
+        });
+
+        btnQ4Submit.setText("Submit");
+        btnQ4Submit.setEnabled(false);
+        btnQ4Submit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnQ4SubmitActionPerformed(evt);
+            }
+        });
+
+        btnQ4Next.setText("Next");
+        btnQ4Next.setEnabled(false);
+        btnQ4Next.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnQ4NextActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout pnlQuestionFourLayout = new javax.swing.GroupLayout(pnlQuestionFour);
+        pnlQuestionFour.setLayout(pnlQuestionFourLayout);
+        pnlQuestionFourLayout.setHorizontalGroup(
+            pnlQuestionFourLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlQuestionFourLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pnlQuestionFourLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblQuestionFourTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlQuestionFourLayout.createSequentialGroup()
+                        .addGap(0, 359, Short.MAX_VALUE)
+                        .addComponent(btnQ4Submit, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(210, 210, 210)
+                        .addComponent(btnQ4Next)
+                        .addContainerGap())))
+            .addGroup(pnlQuestionFourLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(pnlQuestionFourLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(radQ4Ans3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(radQ4Ans1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(radQ4Ans2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(radQ4Ans4, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        pnlQuestionFourLayout.setVerticalGroup(
+            pnlQuestionFourLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlQuestionFourLayout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addComponent(lblQuestionFourTitle)
+                .addGap(50, 50, 50)
+                .addComponent(radQ4Ans1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(radQ4Ans2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(radQ4Ans3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(radQ4Ans4)
+                .addGap(50, 50, 50)
+                .addGroup(pnlQuestionFourLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnQ4Next)
+                    .addComponent(btnQ4Submit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+
+        pblMain.addTab("Question 4", pnlQuestionFour);
+
+        pnlQuestionFive.setBackground(new java.awt.Color(255, 255, 255));
+
+        lblQuestionFiveTitle.setFont(new java.awt.Font("Sylfaen", 0, 24)); // NOI18N
+        lblQuestionFiveTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblQuestionFiveTitle.setText("What does Facultative Anaerobic Mean?");
+
+        radQ5Ans4.setBackground(new java.awt.Color(204, 0, 0));
+        questionFive.add(radQ5Ans4);
+        radQ5Ans4.setFont(new java.awt.Font("Sylfaen", 0, 18)); // NOI18N
+        radQ5Ans4.setText("Cannot live without oxygen");
+        radQ5Ans4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radQ5Ans4ActionPerformed(evt);
+            }
+        });
+
+        radQ5Ans3.setBackground(new java.awt.Color(204, 0, 0));
+        questionFive.add(radQ5Ans3);
+        radQ5Ans3.setFont(new java.awt.Font("Sylfaen", 0, 18)); // NOI18N
+        radQ5Ans3.setText("Cannot live with oxygen");
+        radQ5Ans3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radQ5Ans3ActionPerformed(evt);
+            }
+        });
+
+        radQ5Ans2.setBackground(new java.awt.Color(204, 0, 0));
+        questionFive.add(radQ5Ans2);
+        radQ5Ans2.setFont(new java.awt.Font("Sylfaen", 0, 18)); // NOI18N
+        radQ5Ans2.setText("Can live with oxygen, but prefres no oxygen");
+        radQ5Ans2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radQ5Ans2ActionPerformed(evt);
+            }
+        });
+
+        radQ5Ans1.setBackground(new java.awt.Color(102, 204, 0));
+        questionFive.add(radQ5Ans1);
+        radQ5Ans1.setFont(new java.awt.Font("Sylfaen", 0, 18)); // NOI18N
+        radQ5Ans1.setText("Can live without oxygen, but prefers oxygen");
+        radQ5Ans1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radQ5Ans1ActionPerformed(evt);
+            }
+        });
+
+        btnQ5Submit.setText("Submit");
+        btnQ5Submit.setEnabled(false);
+        btnQ5Submit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnQ5SubmitActionPerformed(evt);
+            }
+        });
+
+        btnQ5Next.setText("Finish");
+        btnQ5Next.setEnabled(false);
+        btnQ5Next.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnQ5NextActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout pnlQuestionFiveLayout = new javax.swing.GroupLayout(pnlQuestionFive);
+        pnlQuestionFive.setLayout(pnlQuestionFiveLayout);
+        pnlQuestionFiveLayout.setHorizontalGroup(
+            pnlQuestionFiveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlQuestionFiveLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblQuestionFiveTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlQuestionFiveLayout.createSequentialGroup()
+                .addContainerGap(364, Short.MAX_VALUE)
+                .addGroup(pnlQuestionFiveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlQuestionFiveLayout.createSequentialGroup()
+                        .addComponent(btnQ5Submit, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(210, 210, 210)
+                        .addComponent(btnQ5Next))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlQuestionFiveLayout.createSequentialGroup()
+                        .addGroup(pnlQuestionFiveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(radQ5Ans3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(radQ5Ans2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(radQ5Ans1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(radQ5Ans4, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        pnlQuestionFiveLayout.setVerticalGroup(
+            pnlQuestionFiveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlQuestionFiveLayout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addComponent(lblQuestionFiveTitle)
+                .addGap(50, 50, 50)
+                .addComponent(radQ5Ans1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(radQ5Ans2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(radQ5Ans3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(radQ5Ans4)
+                .addGap(50, 50, 50)
+                .addGroup(pnlQuestionFiveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnQ5Next)
+                    .addComponent(btnQ5Submit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+
+        pblMain.addTab("Question 5", pnlQuestionFive);
+
+        pnlResults.setBackground(new java.awt.Color(255, 255, 255));
+
+        lblQ2ResultsHeader.setFont(new java.awt.Font("Sylfaen", 0, 24)); // NOI18N
+        lblQ2ResultsHeader.setText("Question 2:");
+
+        lblQ3ResultsHeader.setFont(new java.awt.Font("Sylfaen", 0, 24)); // NOI18N
+        lblQ3ResultsHeader.setText("Question 3:");
+
+        lblQ4ResultsHeader.setFont(new java.awt.Font("Sylfaen", 0, 24)); // NOI18N
+        lblQ4ResultsHeader.setText("Question 4:");
+
+        lblQ1ResultsHeader.setFont(new java.awt.Font("Sylfaen", 0, 24)); // NOI18N
+        lblQ1ResultsHeader.setText("Question 1:");
+
+        lblCorrect.setFont(new java.awt.Font("Sylfaen", 0, 24)); // NOI18N
+        lblCorrect.setText("--");
+
+        lblQ2Results.setFont(new java.awt.Font("Sylfaen", 0, 24)); // NOI18N
+        lblQ2Results.setText("Incorrect");
+
+        lblQ3Results.setFont(new java.awt.Font("Sylfaen", 0, 24)); // NOI18N
+        lblQ3Results.setText("Incorrect");
+
+        lblQ4Results.setFont(new java.awt.Font("Sylfaen", 0, 24)); // NOI18N
+        lblQ4Results.setText("Incorrect");
+
+        lblQ5ResultsHeader.setFont(new java.awt.Font("Sylfaen", 0, 24)); // NOI18N
+        lblQ5ResultsHeader.setText("Question 5:");
+
+        lblQ5Results.setFont(new java.awt.Font("Sylfaen", 0, 24)); // NOI18N
+        lblQ5Results.setText("Incorrect");
+
+        jLabel11.setFont(new java.awt.Font("Sylfaen", 0, 36)); // NOI18N
+        jLabel11.setText("Results");
+
+        lblCorrectHeader.setFont(new java.awt.Font("Sylfaen", 0, 24)); // NOI18N
+        lblCorrectHeader.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblCorrectHeader.setText("Correct Questions:");
+
+        lblPercentageHeader.setFont(new java.awt.Font("Sylfaen", 0, 24)); // NOI18N
+        lblPercentageHeader.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblPercentageHeader.setText("Percentage:");
+
+        lblIncorrectHeader.setFont(new java.awt.Font("Sylfaen", 0, 24)); // NOI18N
+        lblIncorrectHeader.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblIncorrectHeader.setText("Incorrect Questions:");
+
+        lblIncorrect.setFont(new java.awt.Font("Sylfaen", 0, 24)); // NOI18N
+        lblIncorrect.setText("--");
+
+        lblPercentage.setFont(new java.awt.Font("Sylfaen", 0, 24)); // NOI18N
+        lblPercentage.setText("--");
+
+        lblQ1Results.setFont(new java.awt.Font("Sylfaen", 0, 24)); // NOI18N
+        lblQ1Results.setText("Incorrect");
+
+        javax.swing.GroupLayout pnlResultsLayout = new javax.swing.GroupLayout(pnlResults);
+        pnlResults.setLayout(pnlResultsLayout);
+        pnlResultsLayout.setHorizontalGroup(
+            pnlResultsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlResultsLayout.createSequentialGroup()
+                .addGap(163, 163, 163)
+                .addGroup(pnlResultsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlResultsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(pnlResultsLayout.createSequentialGroup()
+                            .addComponent(lblQ5ResultsHeader)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(lblQ5Results, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(pnlResultsLayout.createSequentialGroup()
+                            .addGroup(pnlResultsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(lblQ4ResultsHeader)
+                                .addComponent(lblQ3ResultsHeader))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addGroup(pnlResultsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(lblQ3Results, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lblQ4Results))))
+                    .addGroup(pnlResultsLayout.createSequentialGroup()
+                        .addGroup(pnlResultsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblQ1ResultsHeader)
+                            .addComponent(lblQ2ResultsHeader))
+                        .addGroup(pnlResultsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlResultsLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(lblQ1Results))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlResultsLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(lblQ2Results, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(164, 164, 164)
+                .addGroup(pnlResultsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(lblIncorrectHeader, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblPercentageHeader, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblCorrectHeader, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnlResultsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(lblPercentage, javax.swing.GroupLayout.DEFAULT_SIZE, 95, Short.MAX_VALUE)
+                    .addComponent(lblIncorrect, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblCorrect, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(141, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlResultsLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel11)
+                .addGap(432, 432, 432))
+        );
+        pnlResultsLayout.setVerticalGroup(
+            pnlResultsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlResultsLayout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addComponent(jLabel11)
+                .addGap(17, 17, 17)
+                .addGroup(pnlResultsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblQ1ResultsHeader)
+                    .addComponent(lblQ1Results))
+                .addGap(18, 18, 18)
+                .addGroup(pnlResultsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(pnlResultsLayout.createSequentialGroup()
+                        .addGroup(pnlResultsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblQ2ResultsHeader)
+                            .addComponent(lblQ2Results))
+                        .addGap(18, 18, 18)
+                        .addGroup(pnlResultsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblQ3ResultsHeader)
+                            .addComponent(lblQ3Results))
+                        .addGap(18, 18, 18)
+                        .addGroup(pnlResultsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblQ4ResultsHeader)
+                            .addComponent(lblQ4Results)))
+                    .addGroup(pnlResultsLayout.createSequentialGroup()
+                        .addGroup(pnlResultsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblCorrectHeader)
+                            .addComponent(lblCorrect))
+                        .addGap(18, 18, 18)
+                        .addGroup(pnlResultsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblIncorrectHeader)
+                            .addComponent(lblIncorrect))
+                        .addGap(18, 18, 18)
+                        .addGroup(pnlResultsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblPercentageHeader)
+                            .addComponent(lblPercentage))))
+                .addGap(18, 18, 18)
+                .addGroup(pnlResultsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblQ5Results)
+                    .addComponent(lblQ5ResultsHeader))
+                .addContainerGap(43, Short.MAX_VALUE))
+        );
+
+        pblMain.addTab("Results", pnlResults);
+
+        lblFooterCorrectHeader.setFont(new java.awt.Font("Sylfaen", 0, 18)); // NOI18N
+        lblFooterCorrectHeader.setText("Correct Questions:");
+
+        lblFooterCorrect.setFont(new java.awt.Font("Sylfaen", 0, 18)); // NOI18N
+        lblFooterCorrect.setText("0");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(lblTitle, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jProgressBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+            .addComponent(pblMain, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(384, 384, 384)
+                .addComponent(lblFooterCorrectHeader)
+                .addGap(18, 18, 18)
+                .addComponent(lblFooterCorrect, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(384, 384, 384))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(pblMain, javax.swing.GroupLayout.PREFERRED_SIZE, 388, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(lblFooterCorrectHeader, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblFooterCorrect, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(15, 15, 15))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnStartQuizActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStartQuizActionPerformed
+        // TODO add your handling code here:
+        
+        // Switch to the first question
+        pblMain.setSelectedIndex(1);
+    }//GEN-LAST:event_btnStartQuizActionPerformed
+ 
+    private void radQ1Ans1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radQ1Ans1ActionPerformed
+        // TODO add your handling code here:
+        
+        // Enable the submit button if an answer is selected
+        btnQ1Submit.setEnabled(true);
+    }//GEN-LAST:event_radQ1Ans1ActionPerformed
+
+    private void radQ1Ans2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radQ1Ans2ActionPerformed
+        // TODO add your handling code here:
+        
+        // Enable the submit button if an answer is selected
+        btnQ1Submit.setEnabled(true);
+    }//GEN-LAST:event_radQ1Ans2ActionPerformed
+
+    private void radQ1Ans3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radQ1Ans3ActionPerformed
+        // TODO add your handling code here:
+        
+        // Enable the submit button if an answer is selected
+        btnQ1Submit.setEnabled(true);
+    }//GEN-LAST:event_radQ1Ans3ActionPerformed
+
+    private void radQ1Ans4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radQ1Ans4ActionPerformed
+        // TODO add your handling code here:
+        
+        // Enable the submit button if an answer is selected
+        btnQ1Submit.setEnabled(true);
+    }//GEN-LAST:event_radQ1Ans4ActionPerformed
+
+    private void btnQ1NextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQ1NextActionPerformed
+        // TODO add your handling code here:
+        
+        // Switch to the second question
+        pblMain.setSelectedIndex(2);  
+    }//GEN-LAST:event_btnQ1NextActionPerformed
+ 
+    private void btnQ1SubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQ1SubmitActionPerformed
+    // TODO add your handling code here:
+
+        // Add progress to the progress bar
+        jProgressBar1.setValue(2);
+        
+        // Enable the next button
+        btnQ1Next.setEnabled(true);
+        
+        // Show the answers
+        radQ1Ans1.setOpaque(true);
+        radQ1Ans2.setOpaque(true);
+        radQ1Ans3.setOpaque(true);
+        radQ1Ans4.setOpaque(true);
+        
+        // Disable the radio buttons
+        radQ1Ans1.setEnabled(false);
+        radQ1Ans2.setEnabled(false);
+        radQ1Ans3.setEnabled(false);
+        radQ1Ans4.setEnabled(false);
+        
+        // Determine if the answer is correct
+        if (radQ1Ans3.isSelected())
+        {   
+            // Tell the user they got the question correct
+            btnQ1Submit.setText("Correct!");
+            
+            // Show that this question is correct on the results page
+            lblQ1Results.setText("Correct");
+            
+            // Increase the number of correct answers
+            numCorrect  ++;
+        }
+        else
+        {
+            // Tell the user they got the question wrong
+            btnQ1Submit.setText("Nice Try!");
+            
+            // Increase the number of incorrect answers
+            numIncorrect ++;
+        }
+        
+        // Update the number of correct answers in the footer
+        lblFooterCorrect.setText(String.valueOf(numCorrect));
+    }//GEN-LAST:event_btnQ1SubmitActionPerformed
+
+
+
+    private void radQ2Ans4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radQ2Ans4ActionPerformed
+        // TODO add your handling code here:
+        
+        // Enable the submit button if an answer is selected
+        btnQ2Submit.setEnabled(true);
+    }//GEN-LAST:event_radQ2Ans4ActionPerformed
+
+    private void radQ2Ans3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radQ2Ans3ActionPerformed
+        // TODO add your handling code here:
+        
+        // Enable the submit button if an answer is selected
+        btnQ2Submit.setEnabled(true);
+    }//GEN-LAST:event_radQ2Ans3ActionPerformed
+
+    private void radQ2Ans2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radQ2Ans2ActionPerformed
+        // TODO add your handling code here:
+
+        // Enable the submit button if an answer is selected
+        btnQ2Submit.setEnabled(true);
+    }//GEN-LAST:event_radQ2Ans2ActionPerformed
+
+    private void radQ2Ans1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radQ2Ans1ActionPerformed
+        // TODO add your handling code here:
+        
+        // Enable the submit button if an answer is selected
+        btnQ2Submit.setEnabled(true);
+    }//GEN-LAST:event_radQ2Ans1ActionPerformed
+
+    private void btnQ2SubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQ2SubmitActionPerformed
+        // TODO add your handling code here:
+        
+        // Add progress to the progress bar
+        jProgressBar1.setValue(3);
+        
+        // Enable the next button
+        btnQ2Next.setEnabled(true);
+        
+        // Show the answers
+        radQ2Ans1.setOpaque(true);
+        radQ2Ans2.setOpaque(true);
+        radQ2Ans3.setOpaque(true);
+        radQ2Ans4.setOpaque(true);
+        
+        // Disable the radio buttons
+        radQ2Ans1.setEnabled(false);
+        radQ2Ans2.setEnabled(false);
+        radQ2Ans3.setEnabled(false);
+        radQ2Ans4.setEnabled(false);
+        
+        // Determine if the answer is correct
+        if (radQ2Ans4.isSelected())
+        {   
+            // Tell the user they got the question correct
+            btnQ2Submit.setText("Correct!");
+            
+            // Show that this question is correct on the results page
+            lblQ2Results.setText("Correct");
+            
+            // Increase the number of correct answers
+            numCorrect  ++;
+        }
+        else
+        {
+            // Tell the user they got the question wrong
+            btnQ2Submit.setText("Nice Try!");
+            
+            // Increase the number of incorrect answers
+            numIncorrect ++;
+        }
+        
+        // Update the number of correct answers in the footer
+        lblFooterCorrect.setText(String.valueOf(numCorrect));
+    }//GEN-LAST:event_btnQ2SubmitActionPerformed
+
+    private void btnQ2NextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQ2NextActionPerformed
+        // TODO add your handling code here:
+        
+        // Switch to the second question
+        pblMain.setSelectedIndex(3); 
+    }//GEN-LAST:event_btnQ2NextActionPerformed
+
+
+
+
+    private void radQ3Ans4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radQ3Ans4ActionPerformed
+        // TODO add your handling code here:
+        
+        // Enable the submit button if an answer is selected
+        btnQ3Submit.setEnabled(true);
+    }//GEN-LAST:event_radQ3Ans4ActionPerformed
+
+    private void radQ3Ans3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radQ3Ans3ActionPerformed
+        // TODO add your handling code here:
+        
+        // Enable the submit button if an answer is selected
+        btnQ3Submit.setEnabled(true);
+    }//GEN-LAST:event_radQ3Ans3ActionPerformed
+
+    private void radQ3Ans2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radQ3Ans2ActionPerformed
+        // TODO add your handling code here:
+        
+        // Enable the submit button if an answer is selected
+        btnQ3Submit.setEnabled(true);
+    }//GEN-LAST:event_radQ3Ans2ActionPerformed
+
+    private void radQ3Ans1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radQ3Ans1ActionPerformed
+        // TODO add your handling code here:
+        
+        // Enable the submit button if an answer is selected
+        btnQ3Submit.setEnabled(true);
+    }//GEN-LAST:event_radQ3Ans1ActionPerformed
+
+    private void btnQ3SubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQ3SubmitActionPerformed
+        // TODO add your handling code here:
+        
+        // Add progress to the progress bar
+        jProgressBar1.setValue(4);
+        
+        // Enable the next button
+        btnQ3Next.setEnabled(true);
+        
+        // Show the answers
+        radQ3Ans1.setOpaque(true);
+        radQ3Ans2.setOpaque(true);
+        radQ3Ans3.setOpaque(true);
+        radQ3Ans4.setOpaque(true);
+        
+        // Disable the radio buttons
+        radQ3Ans1.setEnabled(false);
+        radQ3Ans2.setEnabled(false);
+        radQ3Ans3.setEnabled(false);
+        radQ3Ans4.setEnabled(false);
+        
+        // Determine if the answer is correct
+        if (radQ3Ans2.isSelected())
+        {   
+            // Tell the user they got the question correct
+            btnQ3Submit.setText("Correct!");
+            
+            // Show that this question is correct on the results page
+            lblQ3Results.setText("Correct");
+            
+            // Increase the number of correct answers
+            numCorrect  ++;
+        }
+        else
+        {
+            // Tell the user they got the question wrong
+            btnQ3Submit.setText("Nice Try!");
+            
+            // Increase the number of incorrect answers
+            numIncorrect ++;
+        }
+        
+        // Update the number of correct answers in the footer
+        lblFooterCorrect.setText(String.valueOf(numCorrect));
+    }//GEN-LAST:event_btnQ3SubmitActionPerformed
+
+    private void btnQ3NextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQ3NextActionPerformed
+        // TODO add your handling code here:
+        
+        // Switch to the second question
+        pblMain.setSelectedIndex(4); 
+    }//GEN-LAST:event_btnQ3NextActionPerformed
+
+
+
+    private void radQ4Ans4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radQ4Ans4ActionPerformed
+        // TODO add your handling code here:
+        
+        // Enable the submit button if an answer is selected
+        btnQ4Submit.setEnabled(true);
+    }//GEN-LAST:event_radQ4Ans4ActionPerformed
+
+    private void radQ4Ans3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radQ4Ans3ActionPerformed
+        // TODO add your handling code here:
+        
+        // Enable the submit button if an answer is selected
+        btnQ4Submit.setEnabled(true);
+    }//GEN-LAST:event_radQ4Ans3ActionPerformed
+
+    private void radQ4Ans2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radQ4Ans2ActionPerformed
+        // TODO add your handling code here:
+        
+        // Enable the submit button if an answer is selected
+        btnQ4Submit.setEnabled(true);
+    }//GEN-LAST:event_radQ4Ans2ActionPerformed
+
+    private void radQ4Ans1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radQ4Ans1ActionPerformed
+        // TODO add your handling code here:
+        
+        // Enable the submit button if an answer is selected
+        btnQ4Submit.setEnabled(true);
+    }//GEN-LAST:event_radQ4Ans1ActionPerformed
+
+    private void btnQ4SubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQ4SubmitActionPerformed
+        // TODO add your handling code here:
+        
+        // Add progress to the progress bar
+        jProgressBar1.setValue(5);
+        
+        // Enable the next button
+        btnQ4Next.setEnabled(true);
+        
+        // Show the answers
+        radQ4Ans1.setOpaque(true);
+        radQ4Ans2.setOpaque(true);
+        radQ4Ans3.setOpaque(true);
+        radQ4Ans4.setOpaque(true);
+        
+        // Disable the radio buttons
+        radQ4Ans1.setEnabled(false);
+        radQ4Ans2.setEnabled(false);
+        radQ4Ans3.setEnabled(false);
+        radQ4Ans4.setEnabled(false);
+        
+        // Determine if the answer is correct
+        if (radQ4Ans1.isSelected())
+        {   
+            // Tell the user they got the question correct
+            btnQ4Submit.setText("Correct!");
+            
+            // Show that this question is correct on the results page
+            lblQ4Results.setText("Correct");
+            
+            // Increase the number of correct answers
+            numCorrect  ++;
+        }
+        else
+        {
+            // Tell the user they got the question wrong
+            btnQ4Submit.setText("Nice Try!");
+            
+            // Increase the number of incorrect answers
+            numIncorrect ++;
+        }
+        
+        // Update the number of correct answers in the footer
+        lblFooterCorrect.setText(String.valueOf(numCorrect));
+    }//GEN-LAST:event_btnQ4SubmitActionPerformed
+
+    private void btnQ4NextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQ4NextActionPerformed
+        // TODO add your handling code here:
+        
+        // Switch to the second question
+        pblMain.setSelectedIndex(5); 
+    }//GEN-LAST:event_btnQ4NextActionPerformed
+
+
+
+    private void radQ5Ans4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radQ5Ans4ActionPerformed
+        // TODO add your handling code here:
+        
+        // Enable the submit button if an answer is selected
+        btnQ5Submit.setEnabled(true);
+    }//GEN-LAST:event_radQ5Ans4ActionPerformed
+
+    private void radQ5Ans3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radQ5Ans3ActionPerformed
+        // TODO add your handling code here:
+        
+        // Enable the submit button if an answer is selected
+        btnQ5Submit.setEnabled(true);
+    }//GEN-LAST:event_radQ5Ans3ActionPerformed
+
+    private void radQ5Ans2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radQ5Ans2ActionPerformed
+        // TODO add your handling code here:
+        
+        // Enable the submit button if an answer is selected
+        btnQ5Submit.setEnabled(true);
+    }//GEN-LAST:event_radQ5Ans2ActionPerformed
+
+    private void radQ5Ans1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radQ5Ans1ActionPerformed
+        // TODO add your handling code here:
+        
+        // Enable the submit button if an answer is selected
+        btnQ5Submit.setEnabled(true);
+    }//GEN-LAST:event_radQ5Ans1ActionPerformed
+
+    private void btnQ5SubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQ5SubmitActionPerformed
+        // TODO add your handling code here:
+        
+        // Add progress to the progress bar
+        jProgressBar1.setValue(6);
+        
+        // Enable the next button
+        btnQ5Next.setEnabled(true);
+        
+        // Show the answers
+        radQ5Ans1.setOpaque(true);
+        radQ5Ans2.setOpaque(true);
+        radQ5Ans3.setOpaque(true);
+        radQ5Ans4.setOpaque(true);
+        
+        // Disable the radio buttons
+        radQ5Ans1.setEnabled(false);
+        radQ5Ans2.setEnabled(false);
+        radQ5Ans3.setEnabled(false);
+        radQ5Ans4.setEnabled(false);
+        
+        // Determine if the answer is correct
+        if (radQ5Ans1.isSelected())
+        {   
+            // Tell the user they got the question correct
+            btnQ5Submit.setText("Correct!");
+            
+            // Show that this question is correct on the results page
+            lblQ5Results.setText("Correct");
+            
+            // Increase the number of correct answers
+            numCorrect  ++;
+        }
+        else
+        {
+            // Tell the user they got the question wrong
+            btnQ5Submit.setText("Nice Try!");
+            
+            // Increase the number of incorrect answers
+            numIncorrect ++;
+        }
+        
+        // Update the number of correct answers in the footer
+        lblFooterCorrect.setText(String.valueOf(numCorrect));
+    }//GEN-LAST:event_btnQ5SubmitActionPerformed
+
+    private void btnQ5NextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQ5NextActionPerformed
+        // TODO add your handling code here:
+        
+        // Variables
+        double percentCorrect;
+        
+        // Switch to the results page
+        pblMain.setSelectedIndex(6); 
+        
+        // Calculate the percentage
+        percentCorrect = round((double)numCorrect / 5.0 * 100);
+        
+        // Hide the correct questions label in the footer
+        lblFooterCorrectHeader.setVisible(false);
+        lblFooterCorrect.setVisible(false);
+        
+        // Output number correct, incorrect and percentage
+        lblCorrect.setText(String.valueOf(numCorrect));
+        lblIncorrect.setText(String.valueOf(numIncorrect));
+        lblPercentage.setText(String.valueOf(percentCorrect) + "%");
+    }//GEN-LAST:event_btnQ5NextActionPerformed
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -77,5 +1361,77 @@ public class frmBiologyQuizJW extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnQ1Next;
+    private javax.swing.JButton btnQ1Submit;
+    private javax.swing.JButton btnQ2Next;
+    private javax.swing.JButton btnQ2Submit;
+    private javax.swing.JButton btnQ3Next;
+    private javax.swing.JButton btnQ3Submit;
+    private javax.swing.JButton btnQ4Next;
+    private javax.swing.JButton btnQ4Submit;
+    private javax.swing.JButton btnQ5Next;
+    private javax.swing.JButton btnQ5Submit;
+    private javax.swing.JButton btnStartQuiz;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JProgressBar jProgressBar1;
+    private javax.swing.JLabel lblCorrect;
+    private javax.swing.JLabel lblCorrectHeader;
+    private javax.swing.JLabel lblFooterCorrect;
+    private javax.swing.JLabel lblFooterCorrectHeader;
+    private javax.swing.JLabel lblIncorrect;
+    private javax.swing.JLabel lblIncorrectHeader;
+    private javax.swing.JLabel lblIns1;
+    private javax.swing.JLabel lblInst2;
+    private javax.swing.JLabel lblPercentage;
+    private javax.swing.JLabel lblPercentageHeader;
+    private javax.swing.JLabel lblQ1Results;
+    private javax.swing.JLabel lblQ1ResultsHeader;
+    private javax.swing.JLabel lblQ2Results;
+    private javax.swing.JLabel lblQ2ResultsHeader;
+    private javax.swing.JLabel lblQ3Results;
+    private javax.swing.JLabel lblQ3ResultsHeader;
+    private javax.swing.JLabel lblQ4Results;
+    private javax.swing.JLabel lblQ4ResultsHeader;
+    private javax.swing.JLabel lblQ5Results;
+    private javax.swing.JLabel lblQ5ResultsHeader;
+    private javax.swing.JLabel lblQuestionFiveTitle;
+    private javax.swing.JLabel lblQuestionFourTitle;
+    private javax.swing.JLabel lblQuestionOneTitle;
+    private javax.swing.JLabel lblQuestionThreeTitle;
+    private javax.swing.JLabel lblQuestionTwoTitle;
+    private javax.swing.JLabel lblTitle;
+    private javax.swing.JTabbedPane pblMain;
+    private javax.swing.JPanel pnlQuestionFive;
+    private javax.swing.JPanel pnlQuestionFour;
+    private javax.swing.JPanel pnlQuestionOne;
+    private javax.swing.JPanel pnlQuestionThree;
+    private javax.swing.JPanel pnlQuestionTwo;
+    private javax.swing.JPanel pnlResults;
+    private javax.swing.JPanel pnlWelcome;
+    private javax.swing.ButtonGroup questionFive;
+    private javax.swing.ButtonGroup questionFour;
+    private javax.swing.ButtonGroup questionOne;
+    private javax.swing.ButtonGroup questionThree;
+    private javax.swing.ButtonGroup questionTwo;
+    private javax.swing.JRadioButton radQ1Ans1;
+    private javax.swing.JRadioButton radQ1Ans2;
+    private javax.swing.JRadioButton radQ1Ans3;
+    private javax.swing.JRadioButton radQ1Ans4;
+    private javax.swing.JRadioButton radQ2Ans1;
+    private javax.swing.JRadioButton radQ2Ans2;
+    private javax.swing.JRadioButton radQ2Ans3;
+    private javax.swing.JRadioButton radQ2Ans4;
+    private javax.swing.JRadioButton radQ3Ans1;
+    private javax.swing.JRadioButton radQ3Ans2;
+    private javax.swing.JRadioButton radQ3Ans3;
+    private javax.swing.JRadioButton radQ3Ans4;
+    private javax.swing.JRadioButton radQ4Ans1;
+    private javax.swing.JRadioButton radQ4Ans2;
+    private javax.swing.JRadioButton radQ4Ans3;
+    private javax.swing.JRadioButton radQ4Ans4;
+    private javax.swing.JRadioButton radQ5Ans1;
+    private javax.swing.JRadioButton radQ5Ans2;
+    private javax.swing.JRadioButton radQ5Ans3;
+    private javax.swing.JRadioButton radQ5Ans4;
     // End of variables declaration//GEN-END:variables
 }

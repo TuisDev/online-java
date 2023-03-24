@@ -9,13 +9,18 @@
  */
 public class FrmDiceGuessingGameJW extends javax.swing.JFrame {
 
+    //Methods
+    double round(double unRoundedNum) {
+        return (double)Math.round(unRoundedNum * 100) / 100;
+    }
+    
     // Global Variables
     int totalRolls = 0;
     int totalCorrect = 0;
     int totalIncorrect = 0;
     double percentCorrect = 0;
     
-    int diceGuess;
+    int diceGuess = 2; // Default Value
     
     // Global Constants
     final String DICE_FACES[] = {"/dice1.png", "/dice2.png", "/dice3.png", "/dice4.png", "/dice5.png", "/dice6.png"};
@@ -58,6 +63,7 @@ public class FrmDiceGuessingGameJW extends javax.swing.JFrame {
         lblMessage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Dice Guessing Game of Amazingness");
 
         pnlRolls.setBackground(new java.awt.Color(255, 255, 255));
         pnlRolls.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -210,7 +216,7 @@ public class FrmDiceGuessingGameJW extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(lblInst1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(lblInst2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(lblHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 611, Short.MAX_VALUE)
+            .addComponent(lblHeader, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -233,11 +239,9 @@ public class FrmDiceGuessingGameJW extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 505, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(pnlRolls, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 505, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pnlRolls, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -332,7 +336,7 @@ public class FrmDiceGuessingGameJW extends javax.swing.JFrame {
         totalRolls ++;
         
         // Calculate the percent correct
-        percentCorrect = (double)totalCorrect/(double)totalRolls * 100;
+        percentCorrect = round((double)totalCorrect/(double)totalRolls * 100);
         
         // Output a message if the user is lucky or unlucky, but only after the 5th round
         if ((percentCorrect > 22) && (totalRolls > 5))
