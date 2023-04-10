@@ -25,7 +25,7 @@ public class ForLoopsJW {
         int choice;
         
         // Header
-        System.out.println("---- Crazy Counting Contraption ----");
+        System.out.println("----Crazy Counting Contraption----");
         System.out.println("");
         
         // Ask the user for their choice
@@ -36,16 +36,14 @@ public class ForLoopsJW {
         System.out.println("Press 4 to count from 6000 to 1000 by 1000s");
         System.out.println("Please enter you choice: ");
         
-        // Make sure the user input is valid
+        // Get valid user input
         do {
-        // Get the user input
         choice = keyedInput.nextInt();
         } while ((choice < 1) || (choice > 4));
         
         // Dividing Line
         System.out.println("");
-        System.out.println("------------------------------------");
-        System.out.println("");
+        System.out.println("----------------------------------");
         
         // Select the for loop based on the users choice
         switch (choice) {

@@ -90,7 +90,7 @@ public class ExponentialCalculatorJW {
                     base = keyedInput.nextInt();
                     
                     // Ask user for exponent
-                    System.out.println("What is the exponent;");
+                    System.out.println("What is the exponent?");
                     
                     // Get valid exponent from user
                     do {
@@ -107,6 +107,8 @@ public class ExponentialCalculatorJW {
                     // Output the results
                     System.out.println("The result of " + base + "^" + exponent + " = " + result + ".");
                     break;
+                case 4:
+                    System.out.println("Farewell, thanks for using the Exponential Calculator.");
                 default:
                     break;
                                 
