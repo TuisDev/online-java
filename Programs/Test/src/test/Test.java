@@ -18,13 +18,16 @@ public class Test {
      */
     public static void main(String[] args) throws IOException {
             // TODO code application logic here
-                while (System.in.read() != 97) {} 
+//                while (System.in.read() != 97) {} 
                 
                 // Variables
-                long time = System.currentTimeMillis();
-                    while (System.currentTimeMillis() < time + 10000) {
-                        System.out.println(Math.round((System.currentTimeMillis() - time)/ 1000 ));
-                    }
+//                long time = System.currentTimeMillis();
+//                    while (System.currentTimeMillis() < time + 10000) {
+//                        System.out.println(Math.round((System.currentTimeMillis() - time)/ 1000 ));
+//                    }
+
+                System.out.println("EE".endsWith("e"));
+                System.out.println("123".charAt(1));
             }
     
 }
