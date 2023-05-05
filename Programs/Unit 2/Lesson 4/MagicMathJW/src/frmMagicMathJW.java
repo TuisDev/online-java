@@ -192,8 +192,12 @@ public class frmMagicMathJW extends javax.swing.JFrame {
         
         // Get the numbers from the user
         num1 = Double.parseDouble(txtArg1.getText());
-        num2 = Double.parseDouble(txtArg2.getText());
         
+        if (txtArg2.isEnabled()) {
+            num2 = Double.parseDouble(txtArg2.getText());
+        } else {
+            num2 = 0;
+        }
         // Get the result depending on the operation chosen
         switch (operation) {
             case 0:
@@ -209,10 +213,10 @@ public class frmMagicMathJW extends javax.swing.JFrame {
                 answer = Math.abs(num1);
                 break;
             case 4:
-                answer = Math.floor(num1);
+                answer = Math.ceil(num1);
                 break;
             case 5:
-                answer = Math.ceil(num1);
+                answer = Math.floor(num1);
                 break;
             case 6:
                 answer = Math.hypot(num1, num2);
