@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 
 class NeuralNetwork:
     def __init__ (self, learning_rate):
-        self.weights = np.array([np.random.randn(), np.random.randn()])
+        self.weights = np.array([np.random.randn() for i in range(9)])
         self.bias = np.random.randn()
         self.learning_rate = learning_rate
 
