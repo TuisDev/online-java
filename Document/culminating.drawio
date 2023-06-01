@@ -1,0 +1,310 @@
+<mxfile host="Electron" modified="2023-06-01T02:25:43.952Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.2.8 Chrome/112.0.5615.165 Electron/24.2.0 Safari/537.36" etag="a3ChKTKOFW2on8-VXrRI" version="21.2.8" type="device">
+  <diagram name="Page-1" id="7e0a89b8-554c-2b80-1dc8-d5c74ca68de4">
+    <mxGraphModel dx="2049" dy="1194" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-1" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="80" width="1040" height="770" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-10" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="180" width="1040" height="670" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-130" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="950" y="490" width="210" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-131" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="IqF8qVAzn-dB3DnFm8-X-130">
+          <mxGeometry width="210" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-133" value="Ground Beef with Homemade Taco Seasoning Mix" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" vertex="1" parent="IqF8qVAzn-dB3DnFm8-X-130">
+          <mxGeometry x="10" y="160" width="190" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-134" value="Mexican - Easy" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="IqF8qVAzn-dB3DnFm8-X-130">
+          <mxGeometry y="120" width="150" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-135" value="30mins" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="IqF8qVAzn-dB3DnFm8-X-130">
+          <mxGeometry x="150" y="120" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-118" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="450" y="490" width="210" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-119" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="IqF8qVAzn-dB3DnFm8-X-118">
+          <mxGeometry width="210" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-121" value="Ground Beef with Homemade Taco Seasoning Mix" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" vertex="1" parent="IqF8qVAzn-dB3DnFm8-X-118">
+          <mxGeometry x="10" y="160" width="190" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-122" value="Mexican - Easy" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="IqF8qVAzn-dB3DnFm8-X-118">
+          <mxGeometry y="120" width="150" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-123" value="30mins" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="IqF8qVAzn-dB3DnFm8-X-118">
+          <mxGeometry x="150" y="120" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-2" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry y="80" width="160" height="770" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-4" value="Cookbook" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="20" y="160" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-8" value="Cookbook" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;" vertex="1" parent="1">
+          <mxGeometry x="650" y="110" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-9" value="" style="shape=image;html=1;verticalLabelPosition=bottom;verticalAlign=top;imageAspect=1;aspect=fixed;image=img/clipart/Gear_128x128.png" vertex="1" parent="1">
+          <mxGeometry x="1170" y="90" width="22" height="25.81" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-32" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="490" y="790" width="380" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-33" value="" style="triangle;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="890" y="790" width="30" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-34" value="" style="triangle;whiteSpace=wrap;html=1;rotation=-180;" vertex="1" parent="1">
+          <mxGeometry x="400" y="790" width="30" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-35" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="450" y="790" width="160" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-51" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="20.000000000000004" y="110" width="64.82842712474618" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-3" value="______" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="IqF8qVAzn-dB3DnFm8-X-51">
+          <mxGeometry width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-6" value="" style="ellipse;shape=doubleEllipse;whiteSpace=wrap;html=1;aspect=fixed;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" vertex="1" parent="IqF8qVAzn-dB3DnFm8-X-51">
+          <mxGeometry x="54" y="8" width="8" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-7" value="" style="rounded=0;whiteSpace=wrap;html=1;rotation=45;" vertex="1" parent="IqF8qVAzn-dB3DnFm8-X-51">
+          <mxGeometry x="59" y="15" width="6" height="2" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-58" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="450" y="200" width="210" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-28" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="IqF8qVAzn-dB3DnFm8-X-58">
+          <mxGeometry width="210" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-36" value="" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#1ba1e2;sketch=1;" vertex="1" parent="IqF8qVAzn-dB3DnFm8-X-58">
+          <mxGeometry width="210" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-43" value="Ground Beef with Homemade Taco Seasoning Mix" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" vertex="1" parent="IqF8qVAzn-dB3DnFm8-X-58">
+          <mxGeometry x="10" y="160" width="190" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-53" value="Mexican - Easy" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="IqF8qVAzn-dB3DnFm8-X-58">
+          <mxGeometry y="120" width="150" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-54" value="30mins" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="IqF8qVAzn-dB3DnFm8-X-58">
+          <mxGeometry x="150" y="120" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-59" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="200" y="200" width="210" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-56" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="IqF8qVAzn-dB3DnFm8-X-59">
+          <mxGeometry width="210.00000000000003" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-17" value="" style="group" vertex="1" connectable="0" parent="IqF8qVAzn-dB3DnFm8-X-59">
+          <mxGeometry x="86.75" y="106.75" width="36.5" height="36.5" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-12" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="IqF8qVAzn-dB3DnFm8-X-17">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint y="17.75" as="sourcePoint" />
+            <mxPoint x="36.5" y="17.75" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-13" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="IqF8qVAzn-dB3DnFm8-X-17">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="17.750000000000004" as="sourcePoint" />
+            <mxPoint x="17.750000000000004" y="36.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-60" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="700" y="200" width="460" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-61" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="IqF8qVAzn-dB3DnFm8-X-60">
+          <mxGeometry width="210" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-63" value="Ground Beef with Homemade Taco Seasoning Mix" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" vertex="1" parent="IqF8qVAzn-dB3DnFm8-X-60">
+          <mxGeometry x="10" y="160" width="190" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-64" value="Mexican - Easy" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="IqF8qVAzn-dB3DnFm8-X-60">
+          <mxGeometry y="120" width="150" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-65" value="30mins" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="IqF8qVAzn-dB3DnFm8-X-60">
+          <mxGeometry x="150" y="120" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-143" value="" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#1ba1e2;sketch=1;" vertex="1" parent="IqF8qVAzn-dB3DnFm8-X-60">
+          <mxGeometry width="210" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-144" value="..." style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;spacingTop=0;verticalAlign=middle;align=center;spacingLeft=0;spacingBottom=12;fontSize=22;" vertex="1" parent="IqF8qVAzn-dB3DnFm8-X-60">
+          <mxGeometry x="186" y="4" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-147" value="" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#1ba1e2;sketch=1;" vertex="1" parent="IqF8qVAzn-dB3DnFm8-X-60">
+          <mxGeometry x="250" width="210" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-148" value="..." style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;spacingTop=0;verticalAlign=middle;align=center;spacingLeft=0;spacingBottom=12;fontSize=22;" vertex="1" parent="IqF8qVAzn-dB3DnFm8-X-60">
+          <mxGeometry x="436" y="4" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-66" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="950" y="200" width="210" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-67" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="IqF8qVAzn-dB3DnFm8-X-66">
+          <mxGeometry width="210" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-69" value="Ground Beef with Homemade Taco Seasoning Mix" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" vertex="1" parent="IqF8qVAzn-dB3DnFm8-X-66">
+          <mxGeometry x="10" y="160" width="190" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-70" value="Mexican - Easy" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="IqF8qVAzn-dB3DnFm8-X-66">
+          <mxGeometry y="120" width="150" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-71" value="30mins" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="IqF8qVAzn-dB3DnFm8-X-66">
+          <mxGeometry x="150" y="120" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-145" value="" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#1ba1e2;sketch=1;" vertex="1" parent="IqF8qVAzn-dB3DnFm8-X-66">
+          <mxGeometry width="210" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-146" value="..." style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;spacingTop=0;verticalAlign=middle;align=center;spacingLeft=0;spacingBottom=12;fontSize=22;" vertex="1" parent="IqF8qVAzn-dB3DnFm8-X-66">
+          <mxGeometry x="186" y="4" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-100" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="450" y="200" width="210" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-101" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="IqF8qVAzn-dB3DnFm8-X-100">
+          <mxGeometry width="210" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-102" value="" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#1ba1e2;sketch=1;" vertex="1" parent="IqF8qVAzn-dB3DnFm8-X-100">
+          <mxGeometry width="210" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-103" value="Ground Beef with Homemade Taco Seasoning Mix" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" vertex="1" parent="IqF8qVAzn-dB3DnFm8-X-100">
+          <mxGeometry x="10" y="160" width="190" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-104" value="Mexican - Easy" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="IqF8qVAzn-dB3DnFm8-X-100">
+          <mxGeometry y="120" width="150" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-105" value="30mins" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="IqF8qVAzn-dB3DnFm8-X-100">
+          <mxGeometry x="150" y="120" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-55" value="..." style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;spacingTop=0;verticalAlign=middle;align=center;spacingLeft=0;spacingBottom=12;fontSize=22;" vertex="1" parent="IqF8qVAzn-dB3DnFm8-X-100">
+          <mxGeometry x="186" y="4" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-112" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="200" y="490" width="460" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-113" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="IqF8qVAzn-dB3DnFm8-X-112">
+          <mxGeometry width="210" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-115" value="Ground Beef with Homemade Taco Seasoning Mix" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" vertex="1" parent="IqF8qVAzn-dB3DnFm8-X-112">
+          <mxGeometry x="10" y="160" width="190" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-116" value="Mexican - Easy" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="IqF8qVAzn-dB3DnFm8-X-112">
+          <mxGeometry y="120" width="150" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-117" value="30mins" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="IqF8qVAzn-dB3DnFm8-X-112">
+          <mxGeometry x="150" y="120" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-149" value="" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#1ba1e2;sketch=1;" vertex="1" parent="IqF8qVAzn-dB3DnFm8-X-112">
+          <mxGeometry width="210" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-150" value="..." style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;spacingTop=0;verticalAlign=middle;align=center;spacingLeft=0;spacingBottom=12;fontSize=22;" vertex="1" parent="IqF8qVAzn-dB3DnFm8-X-112">
+          <mxGeometry x="186" y="4" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-151" value="" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#1ba1e2;sketch=1;" vertex="1" parent="IqF8qVAzn-dB3DnFm8-X-112">
+          <mxGeometry x="250" width="210" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-152" value="..." style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;spacingTop=0;verticalAlign=middle;align=center;spacingLeft=0;spacingBottom=12;fontSize=22;" vertex="1" parent="IqF8qVAzn-dB3DnFm8-X-112">
+          <mxGeometry x="436" y="4" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-124" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="700" y="490" width="460" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-125" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="IqF8qVAzn-dB3DnFm8-X-124">
+          <mxGeometry width="210" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-127" value="Ground Beef with Homemade Taco Seasoning Mix" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" vertex="1" parent="IqF8qVAzn-dB3DnFm8-X-124">
+          <mxGeometry x="10" y="160" width="190" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-128" value="Mexican - Easy" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="IqF8qVAzn-dB3DnFm8-X-124">
+          <mxGeometry y="120" width="150" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-129" value="30mins" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="IqF8qVAzn-dB3DnFm8-X-124">
+          <mxGeometry x="150" y="120" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-153" value="" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#1ba1e2;sketch=1;" vertex="1" parent="IqF8qVAzn-dB3DnFm8-X-124">
+          <mxGeometry width="210" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-154" value="..." style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;spacingTop=0;verticalAlign=middle;align=center;spacingLeft=0;spacingBottom=12;fontSize=22;" vertex="1" parent="IqF8qVAzn-dB3DnFm8-X-124">
+          <mxGeometry x="186" y="4" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-155" value="" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#1ba1e2;sketch=1;" vertex="1" parent="IqF8qVAzn-dB3DnFm8-X-124">
+          <mxGeometry x="250" width="210" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-156" value="..." style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;spacingTop=0;verticalAlign=middle;align=center;spacingLeft=0;spacingBottom=12;fontSize=22;" vertex="1" parent="IqF8qVAzn-dB3DnFm8-X-124">
+          <mxGeometry x="436" y="4" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-159" value="All Recipes" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="640" y="140" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-160" value="All Recipes" style="text;html=1;strokeColor=#666666;fillColor=#f5f5f5;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="40" y="200" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-161" value="Vegan" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="40" y="230" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-162" value="Mexican" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="40" y="260" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-163" value="Breakfast" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="40" y="290" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-164" value="New Folder" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="40" y="320" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-165" value="Recipe" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="20" y="360" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-166" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1520" y="80" width="1040" height="770" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-167" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1520" y="160" width="1040" height="690" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-178" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1360" y="80" width="160" height="770" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-179" value="Cookbook" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1380" y="160" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-180" value="Ground Beef with Homemade Taco Seasoning Mix" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;" vertex="1" parent="1">
+          <mxGeometry x="1520" y="110" width="1040" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-181" value="" style="shape=image;html=1;verticalLabelPosition=bottom;verticalAlign=top;imageAspect=1;aspect=fixed;image=img/clipart/Gear_128x128.png" vertex="1" parent="1">
+          <mxGeometry x="2530" y="90" width="22" height="25.81" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-186" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="1380" y="110" width="64.82842712474618" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-187" value="______" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="IqF8qVAzn-dB3DnFm8-X-186">
+          <mxGeometry width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-188" value="" style="ellipse;shape=doubleEllipse;whiteSpace=wrap;html=1;aspect=fixed;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" vertex="1" parent="IqF8qVAzn-dB3DnFm8-X-186">
+          <mxGeometry x="54" y="8" width="8" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-189" value="" style="rounded=0;whiteSpace=wrap;html=1;rotation=45;" vertex="1" parent="IqF8qVAzn-dB3DnFm8-X-186">
+          <mxGeometry x="59" y="15" width="6" height="2" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-248" value="Recipe" style="text;html=1;strokeColor=#666666;fillColor=#f5f5f5;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="1380" y="210" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-250" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1520" y="160" width="280" height="690" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-251" value="Ingredients" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=22;" vertex="1" parent="1">
+          <mxGeometry x="1550" y="180" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-254" value="&lt;ul style=&quot;font-size: 16px;&quot;&gt;&lt;li style=&quot;font-size: 16px;&quot;&gt;1lb of Ground Beef&lt;/li&gt;&lt;li style=&quot;font-size: 16px;&quot;&gt;1 tsb of paprika&lt;/li&gt;&lt;li style=&quot;font-size: 16px;&quot;&gt;1 tsb of salt&lt;/li&gt;&lt;/ul&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="1540" y="224" width="240" height="96" as="geometry" />
+        </mxCell>
+        <mxCell id="IqF8qVAzn-dB3DnFm8-X-255" value="Instructions" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="1820" y="174" width="170" height="26" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
