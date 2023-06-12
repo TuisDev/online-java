@@ -1,0 +1,29 @@
+MAKE IT SO THAT YOU CANT CREATE TWO RECIPES WITH THE SAME NAME.
+THINK OF ALL OF THE ERRORS PEOPLE COULD DO TO TRY AND MESS THINGS UP.
+TRY IT SO THAT THERE ARE SEPERATE ARRAYS FOR SEARCH AND COOKBOOK        
+        
+        
+
+
+
+    /*indexOf
+    
+    This method find the index of a element within an array
+
+    Parameters: String [], String
+
+    Returns: int
+     */
+    public static int indexOf(String [] array, String object) {
+        // Variables
+        int i = 0;
+
+        // Iterate over every element in the array, until you find one that matches the input
+        for (String element : array) {
+            if (element.equals(object)) {
+                return i;
+            }
+            i ++;
+        }
+        return 0;
+    }
