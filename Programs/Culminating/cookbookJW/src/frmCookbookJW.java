@@ -5,6 +5,8 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.awt.image.BufferedImage;
+import javax.swing.filechooser.FileFilter;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -24,6 +26,7 @@ public class frmCookbookJW extends javax.swing.JFrame {
     String imagePath = "";
     int buttonIndex;
     int recipeIndex = 0;
+    File oldImage = null;
     javax.swing.JPanel buttonPanel;
     
     String [] names = {};
@@ -44,7 +47,6 @@ public class frmCookbookJW extends javax.swing.JFrame {
     // Methods
     
     /* append
-    
     The following methods all take an array, and add a new element on to the end of it.
 
     Parameters: (String [], String); (JLabel [], JLabel); (JPanel [], JPanel); (JLayeredPane [], JLayeredPane); or (JButton [], JButton)
@@ -52,47 +54,89 @@ public class frmCookbookJW extends javax.swing.JFrame {
     Returns: String []; JLabel []; JPanel []; JLayeredPane []; or JButton []
     */
     public static String [] append (String [] array, String newElement) {
+        // Variables
         String [] temp = new String [array.length + 1];
+
+        // Add the new element
         System.arraycopy(array, 0, temp, 0, array.length);
         
         temp[array.length] = newElement;
         array = temp;
+
+        // Return the updated array
         return array;
     }
     public static javax.swing.JLabel [] append (javax.swing.JLabel [] array, javax.swing.JLabel newElement) {
+        // Variables
         javax.swing.JLabel [] temp = new javax.swing.JLabel [array.length + 1];
+
+        // Add the new element
         System.arraycopy(array, 0, temp, 0, array.length);
         temp[array.length] = newElement;
         array = temp;
 
+        // Return the updated array
         return array;
     }
     public static javax.swing.JPanel [] append (javax.swing.JPanel [] array, javax.swing.JPanel newElement) {
+        // Variables
         javax.swing.JPanel [] temp = new javax.swing.JPanel [array.length + 1];
+
+        // Add the new element
         System.arraycopy(array, 0, temp, 0, array.length);
         temp[array.length] = newElement;
         array = temp;
 
+        // Return the updated array
         return array;
     }
     public static javax.swing.JLayeredPane [] append (javax.swing.JLayeredPane [] array, javax.swing.JLayeredPane newElement) {
+        // Variables
         javax.swing.JLayeredPane [] temp = new javax.swing.JLayeredPane [array.length + 1];
+
+        // Add the new element
         System.arraycopy(array, 0, temp, 0, array.length);
         temp[array.length] = newElement;
         array = temp;
 
+        // Return the updated array
         return array;
     }
     public static javax.swing.JButton [] append (javax.swing.JButton [] array, javax.swing.JButton newElement) {
+        // Variables
         javax.swing.JButton [] temp = new javax.swing.JButton [array.length + 1];
+
+        // Add the new element
         System.arraycopy(array, 0, temp, 0, array.length);
         temp[array.length] = newElement;
         array = temp;
 
+        // Return the updated array
         return array;
     }
-    /* remove
     
+    /* appendBeginning
+    This method appends an element to the beginning of an arrry
+
+    Parameters: String [], String
+
+    Returns: String [];
+     */
+    public static String [] appendBeginning(String [] array, String newElement) {
+        // Variables
+        String [] temp = new String [array.length + 1];
+
+        // Add the new element to the beginning
+        System.arraycopy(array, 0, temp, 1, array.length);
+        
+        temp[0] = newElement;
+        array = temp;
+
+        // return the updated array
+        return array;
+    }
+
+    /* remove
     This method removes an element from an array
     
     Parameters: String [], int
@@ -100,8 +144,12 @@ public class frmCookbookJW extends javax.swing.JFrame {
     Returns: String []
     */
     public static String [] remove (String [] array, int index) {
+        // Only remove the element if the array has an element to remove
         if (array.length > 0) {
+            // Variables
             String [] temp = new String [array.length - 1];
+
+            // Remove the element
             for (int i = 0; i < array.length; i ++) {
                 if (i < index) {
                     temp[i] = array[i];
@@ -111,36 +159,103 @@ public class frmCookbookJW extends javax.swing.JFrame {
             }
             
             array = temp;
+
+            // Return the updated array
             return array;
         } else {
+            // Return an empty array
             return new String [0];
         }
     }
 
     /*indexOf
-    
-    This method find the index of a element within an array
+    This method finds the index of a element within an array
 
     Parameters: String [], String
 
     Returns: int
      */
-    public static int indexOf(String [] array, String object) {
+    public static int indexOf(String [] array, String element) {
         // Variables
         int i = 0;
 
         // Iterate over every element in the array, until you find one that matches the input
-        for (String element : array) {
-            if (element.equals(object)) {
+        for (String item : array) {
+            if (item.equals(element)) {
+                // return the index of the element
                 return i;
             }
             i ++;
         }
-        return 0;
+
+        // If the element is not in the array, return -1
+        return -1;
+    }
+
+    /* switchTab
+    This method switches to a different GUI tab
+
+    Parameters: int;
+
+    Returns: none;
+     */
+    public void switchTab(int tab) {
+        // Set all the labels to plain text
+        lblCookbookSidebar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/cookbook.png")));
+        lblRecipeSidebar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/recipe.png")));
+        lblSearchSidebar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/search.png")));
+        
+        lblCookbookSidebar.setFont(new java.awt.Font("Gill Sans MT", 0, 18));
+        lblRecipeSidebar.setFont(new java.awt.Font("Gill Sans MT", 0, 18));
+        lblSearchSidebar.setFont(new java.awt.Font("Gill Sans MT", 0, 18));
+        
+        // Hide all the tabs
+        pnlCookbookLayer.setVisible(false);
+        pnlRecipeLayer.setVisible(false);
+        pnlSearchLayer.setVisible(false);
+
+        // Bold the selected tab, and make it visible
+        switch (tab) {
+            case 0:
+                lblSearchSidebar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/searchSelected.png")));
+                lblSearchSidebar.setFont(new java.awt.Font("Gill Sans MT", 1, 18));
+                pnlSearchLayer.setVisible(true);
+                break;
+            case 1:
+                lblCookbookSidebar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/cookbookSelected.png")));
+                lblCookbookSidebar.setFont(new java.awt.Font("Gill Sans MT", 1, 18));
+                pnlCookbookLayer.setVisible(true);
+                break;
+            case 2:
+                lblRecipeSidebar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/recipeSelected.png")));
+                lblRecipeSidebar.setFont(new java.awt.Font("Gill Sans MT", 1, 18));
+                pnlRecipeLayer.setVisible(true);
+                break;
+        }
+
+    }
+
+    /* deleteImage
+    This method deletes an image from the image folder
+
+    Parameters: none
+
+    Returns: none
+     */
+    public void deleteImage() {
+        // Check that the image exists
+        if (!imagePath.isBlank()) {
+            // Delete the image
+            File image = new File("src" + imagePath);
+            image.delete();
+        }
+
+        // Reset the image path and image label
+        lblImage.setIcon(null);
+        imagePath = "";
     }
 
     /* erasePanel
-
     This method clears both the search results and cookbook results panel
 
     Parameters: none
@@ -148,10 +263,13 @@ public class frmCookbookJW extends javax.swing.JFrame {
     Returns: none
      */
     public void erasePanel() {
+        // Clear cookbook results
+        // Remove all of the recipes
         for (int i = 0; i < lpnRecipes.length; i ++) {
             pnlCookbookResults.remove(lpnRecipes[i]);
         }
         
+        // Update the panel
         cookbookLayout = new javax.swing.GroupLayout(pnlCookbookResults);
         pnlCookbookResults.setLayout(cookbookLayout);
         pnlCookbookResults.revalidate();
@@ -159,10 +277,13 @@ public class frmCookbookJW extends javax.swing.JFrame {
         revalidate();
         repaint();
         
+        // Clear search results
+        // Remove all of the recipes
         for (int i = 0; i < lpnRecipes.length; i ++) {
             pnlSearchResults.remove(lpnRecipes[i]);
         }
         
+        // Update the panel
         cookbookLayout = new javax.swing.GroupLayout(pnlSearchResults);
         pnlSearchResults.setLayout(cookbookLayout);
         pnlSearchResults.revalidate();
@@ -172,10 +293,9 @@ public class frmCookbookJW extends javax.swing.JFrame {
     }
     
     /* readDb
+    This method reads data from the database
     
-    These methods read data from the database
-    
-    Parameters: either none or String, String, String, STring
+    Parameters: none
     
     Returns: none
     */
@@ -187,17 +307,24 @@ public class frmCookbookJW extends javax.swing.JFrame {
         imagePaths = new String [0];
         ingredientLists = new String [0];
         directionLists = new String [0];
-        
-        try {
-            FileReader csvFile = new FileReader("src" + dbPath);
-            BufferedReader csvReader = new BufferedReader(csvFile);
 
-                while ((line = csvReader.readLine()) != null) {   
+        FileReader csvFile;
+        BufferedReader csvReader;
+
+        // Make sure the database exists
+        try {
+            // Create the CSV reader
+            csvFile = new FileReader("src" + dbPath);
+            csvReader = new BufferedReader(csvFile);
+
+                // Read data into the database
+                while ((line = csvReader.readLine()) != null) {
                     values = line.split(",");
-                    names = append(names, values[0]);
-                    imagePaths = append(imagePaths, values[1]);
-                    ingredientLists = append(ingredientLists, values[2]);
-                    directionLists = append(directionLists, values[3]);
+                    names = append(names, values[0].replace("\u23F7", ",")); 
+                    imagePaths = append(imagePaths, values[1].replace("\u23F7", ","));
+                    ingredientLists = append(ingredientLists, values[2].replace("\u23F7", ","));
+                    directionLists = append(directionLists, values[3].replace("\u23F7", ","));
+                    
                 }
             
             csvReader.close();
@@ -205,40 +332,40 @@ public class frmCookbookJW extends javax.swing.JFrame {
             System.out.println("Database not found!");
         }
     }
-    public void readDb(String name, String image, String ingredientList, String directionList) {
+
+    /* writeDb
+    This method writes data to the database
+
+    Parameters: none
+
+    Returns: none
+     */
+    public void writeDb() {
         // Variables
-        String line;
-        String [] values;
-        names = new String [1];
-        imagePaths = new String [1];
-        ingredientLists = new String [1];
-        directionLists = new String [1];
-        
-        names[0] = name;
-        imagePaths[0] = image;
-        ingredientLists[0] = ingredientList;
-        directionLists[0] = directionList;
-        
+        FileWriter csvWriter;
+
+        // Make sure the database exists
         try {
-            FileReader csvFile = new FileReader("src" + dbPath);
-            BufferedReader csvReader = new BufferedReader(csvFile);
+            // Create the CSV writer
+            csvWriter = new FileWriter("src/" + dbPath);
+            
+            // Write data to the database
+            for (int i = 0; i < names.length; i ++) {
+                csvWriter.append(names[i].replace(",", "\u23F7") + ",");
+                csvWriter.append(imagePaths[i].replace(",", "\u23F7") + ",");
+                csvWriter.append(ingredientLists[i].replace(",", "\u23F7") + ",");
+                csvWriter.append(directionLists[i].replace(",", "\u23F7") + "\n");
+            }
 
-                while ((line = csvReader.readLine()) != null) {   
-                    values = line.split(",");
-                    names = append(names, values[0]);
-                    imagePaths = append(imagePaths, values[1]);
-                    ingredientLists = append(ingredientLists, values[2]);
-                    directionLists = append(directionLists, values[3]);
-                }
-
-            csvReader.close();
+            // Update the database
+            csvWriter.flush();
+            csvWriter.close();
         } catch (IOException e) {
-            System.out.println("Database not found!");
+            System.out.println("No database found!");
         }
     }
     
     /* drawRecipes
-    
     This method draws the recipe cards onto a given JPanel
     
     Parameters: JPanel, int
@@ -246,20 +373,22 @@ public class frmCookbookJW extends javax.swing.JFrame {
     Returns: none
     */
     public void drawRecipes(javax.swing.JPanel panel, int offset) {
-        // Variables
+
+        // Create the cookbook layout
         cookbookLayout = new javax.swing.GroupLayout(panel);
 
         // Erase the Panel
         erasePanel();
         
-        
+        // Repeat for every recipe that needs to be drawn
         for (int i = 0; i < names.length; i ++) {
             int j = i; // Makes the event listeners happy
             
+            // Create the cookbook layout
             cookbookLayout = new javax.swing.GroupLayout(panel);
             
 
-            // Create new element
+            // Create the new elements
             if (i == 0) {
                 lpnRecipes = new javax.swing.JLayeredPane [0];
                 pnlEditRecipes = new javax.swing.JPanel [0];
@@ -368,7 +497,7 @@ public class frmCookbookJW extends javax.swing.JFrame {
                         .addContainerGap(154, Short.MAX_VALUE)))
             );
 
-            // Place the card in it's proper place
+            // Place the recipe in it's proper place
             panel.setLayout(cookbookLayout);
             cookbookLayout.setHorizontalGroup(
                 cookbookLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -384,8 +513,8 @@ public class frmCookbookJW extends javax.swing.JFrame {
                     .addComponent(lpnRecipes[i], javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(25, Short.MAX_VALUE))
             );
-//            
-//            panel.repaint();
+
+            // Update the display
             revalidate();
         }
     }
@@ -395,9 +524,22 @@ public class frmCookbookJW extends javax.swing.JFrame {
      */
     public frmCookbookJW() {
         initComponents();
+
+        // Hide the recipe creator
         pnlNewRecipeLayer.setVisible(false);
+
+        // Display the recipes
         readDb();
         drawRecipes(pnlSearchResults, 0);
+
+        // Delete any unused images that might be leftover
+        File [] files = new File("src/images/").listFiles();
+
+        for (File file : files) {
+            if (indexOf(imagePaths, "/images/" + file.getName()) == -1) {
+                file.delete();
+            }
+        }
     }
 
     /**
@@ -474,6 +616,11 @@ public class frmCookbookJW extends javax.swing.JFrame {
         fchUpload.setDialogTitle("Upload an Image");
         fchUpload.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         fchUpload.setMinimumSize(new java.awt.Dimension(588, 328));
+        fchUpload.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fchUploadActionPerformed(evt);
+            }
+        });
 
         mnuEdit.setText("Edit");
         mnuEdit.addActionListener(new java.awt.event.ActionListener() {
@@ -621,7 +768,7 @@ public class frmCookbookJW extends javax.swing.JFrame {
             pnlCookbookHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlCookbookHeaderLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblCookbook, javax.swing.GroupLayout.DEFAULT_SIZE, 1244, Short.MAX_VALUE))
+                .addComponent(lblCookbook, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlCookbookHeaderLayout.setVerticalGroup(
             pnlCookbookHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -656,11 +803,15 @@ public class frmCookbookJW extends javax.swing.JFrame {
         pnlAddRecipe.setLayout(pnlAddRecipeLayout);
         pnlAddRecipeLayout.setHorizontalGroup(
             pnlAddRecipeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblAddRecipe, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 266, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlAddRecipeLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(lblAddRecipe, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         pnlAddRecipeLayout.setVerticalGroup(
             pnlAddRecipeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblAddRecipe, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(pnlAddRecipeLayout.createSequentialGroup()
+                .addComponent(lblAddRecipe, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0))
         );
 
         javax.swing.GroupLayout pnlCookbookResultsLayout = new javax.swing.GroupLayout(pnlCookbookResults);
@@ -670,7 +821,7 @@ public class frmCookbookJW extends javax.swing.JFrame {
             .addGroup(pnlCookbookResultsLayout.createSequentialGroup()
                 .addGap(25, 25, 25)
                 .addComponent(pnlAddRecipe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(945, Short.MAX_VALUE))
+                .addContainerGap(965, Short.MAX_VALUE))
         );
         pnlCookbookResultsLayout.setVerticalGroup(
             pnlCookbookResultsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -693,7 +844,7 @@ public class frmCookbookJW extends javax.swing.JFrame {
 
         lblDirectionsInst.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         lblDirectionsInst.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblDirectionsInst.setText("Enter the directions below, one direction per line");
+        lblDirectionsInst.setText("Enter the directions below, one sentence per line");
 
         txtNewDirections.setColumns(20);
         txtNewDirections.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
@@ -704,19 +855,22 @@ public class frmCookbookJW extends javax.swing.JFrame {
         pnlNewDirections.setLayout(pnlNewDirectionsLayout);
         pnlNewDirectionsLayout.setHorizontalGroup(
             pnlNewDirectionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblDirectionsInst, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlNewDirectionsLayout.createSequentialGroup()
-                .addGap(0, 81, Short.MAX_VALUE)
-                .addComponent(txtNewDirections, javax.swing.GroupLayout.PREFERRED_SIZE, 471, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(pnlNewDirectionsLayout.createSequentialGroup()
+                .addComponent(lblDirectionsInst, javax.swing.GroupLayout.PREFERRED_SIZE, 504, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(pnlNewDirectionsLayout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addComponent(txtNewDirections, javax.swing.GroupLayout.PREFERRED_SIZE, 454, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlNewDirectionsLayout.setVerticalGroup(
             pnlNewDirectionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlNewDirectionsLayout.createSequentialGroup()
                 .addGap(10, 10, 10)
                 .addComponent(lblDirectionsInst)
-                .addGap(10, 10, 10)
+                .addGap(18, 18, 18)
                 .addComponent(txtNewDirections, javax.swing.GroupLayout.PREFERRED_SIZE, 555, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(90, Short.MAX_VALUE))
+                .addContainerGap(82, Short.MAX_VALUE))
         );
 
         scpNewDirections.setViewportView(pnlNewDirections);
@@ -745,9 +899,9 @@ public class frmCookbookJW extends javax.swing.JFrame {
             pnlNewIngredientsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlNewIngredientsLayout.createSequentialGroup()
                 .addGroup(pnlNewIngredientsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txtNewIngredients, javax.swing.GroupLayout.PREFERRED_SIZE, 423, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblIngredientsInst, javax.swing.GroupLayout.PREFERRED_SIZE, 464, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(47, Short.MAX_VALUE))
+                    .addComponent(txtNewIngredients, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblIngredientsInst, javax.swing.GroupLayout.PREFERRED_SIZE, 398, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
         pnlNewIngredientsLayout.setVerticalGroup(
             pnlNewIngredientsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -769,7 +923,7 @@ public class frmCookbookJW extends javax.swing.JFrame {
         pnlNewIngredientsBox.setLayout(pnlNewIngredientsBoxLayout);
         pnlNewIngredientsBoxLayout.setHorizontalGroup(
             pnlNewIngredientsBoxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(scpNewIngredients, javax.swing.GroupLayout.DEFAULT_SIZE, 464, Short.MAX_VALUE)
+            .addComponent(scpNewIngredients, javax.swing.GroupLayout.DEFAULT_SIZE, 438, Short.MAX_VALUE)
             .addComponent(lblNewIngredients, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         pnlNewIngredientsBoxLayout.setVerticalGroup(
@@ -778,7 +932,8 @@ public class frmCookbookJW extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(lblNewIngredients, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(scpNewIngredients, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addComponent(scpNewIngredients, javax.swing.GroupLayout.PREFERRED_SIZE, 517, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         lblNewDirections.setBackground(new java.awt.Color(255, 255, 255));
@@ -788,6 +943,11 @@ public class frmCookbookJW extends javax.swing.JFrame {
 
         txtName.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         txtName.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Name:", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Gill Sans MT", 0, 14))); // NOI18N
+        txtName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNameActionPerformed(evt);
+            }
+        });
 
         lblCancel.setBackground(new java.awt.Color(255, 170, 170));
         lblCancel.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
@@ -832,28 +992,30 @@ public class frmCookbookJW extends javax.swing.JFrame {
                     .addComponent(lblImage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(pnlNewIngredientsBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(pnlNewRecipeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblNewDirections, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(scpNewDirections, javax.swing.GroupLayout.DEFAULT_SIZE, 486, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(pnlNewRecipeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(scpNewDirections, javax.swing.GroupLayout.DEFAULT_SIZE, 520, Short.MAX_VALUE)
+                    .addComponent(lblNewDirections, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         pnlNewRecipeLayout.setVerticalGroup(
             pnlNewRecipeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlNewRecipeLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblCancel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblImage, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(lblDone, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 359, Short.MAX_VALUE))
             .addComponent(pnlNewIngredientsBox, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(pnlNewRecipeLayout.createSequentialGroup()
-                .addComponent(lblNewDirections, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(scpNewDirections, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addGroup(pnlNewRecipeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlNewRecipeLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(lblCancel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lblImage, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(lblDone, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlNewRecipeLayout.createSequentialGroup()
+                        .addComponent(lblNewDirections, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(scpNewDirections, javax.swing.GroupLayout.PREFERRED_SIZE, 524, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout pnlNewRecipeLayerLayout = new javax.swing.GroupLayout(pnlNewRecipeLayer);
@@ -1001,7 +1163,6 @@ public class frmCookbookJW extends javax.swing.JFrame {
 
         scpDirections.setBackground(new java.awt.Color(255, 255, 255));
         scpDirections.setBorder(null);
-        scpDirections.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
         pnlDirections.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -1041,7 +1202,6 @@ public class frmCookbookJW extends javax.swing.JFrame {
         pnlIngredientsBox.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
 
         scpIngredients.setBorder(null);
-        scpIngredients.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
         pnlIngredients.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -1202,19 +1362,8 @@ public class frmCookbookJW extends javax.swing.JFrame {
         lstIngredients.setListData(ingredientLists[index].split(regex));
         lstDirections.setListData(directionLists[index].split(regex));
 
-        // Bold the recipe icon and text
-        lblCookbookSidebar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/cookbook.png")));
-        lblRecipeSidebar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/recipeSelected.png")));
-        lblSearchSidebar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/search.png")));
-        
-        lblCookbookSidebar.setFont(new java.awt.Font("Gill Sans MT", 0, 18));
-        lblRecipeSidebar.setFont(new java.awt.Font("Gill Sans MT", 1, 18));
-        lblSearchSidebar.setFont(new java.awt.Font("Gill Sans MT", 0, 18));
-        
-        // Hide the cookbook and search layer, show the recipe layer
-        pnlCookbookLayer.setVisible(false);
-        pnlRecipeLayer.setVisible(true);
-        pnlSearchLayer.setVisible(false);
+        // Switch to the recipe tab
+        switchTab(2);
         
     }
     
@@ -1261,7 +1410,7 @@ public class frmCookbookJW extends javax.swing.JFrame {
         // Read from the database
         readDb();
 
-        
+        // Adjust the button event listeners so that the displayed recipe's buttons correspond with the database
         for (int i = 0; i < resultantNames.length; i ++) {
             int index = indexOf(names, resultantNames[i]);
 
@@ -1273,42 +1422,49 @@ public class frmCookbookJW extends javax.swing.JFrame {
     }//GEN-LAST:event_txtSearchActionPerformed
 
     private void lblAddRecipeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblAddRecipeMouseClicked
-        // TODO add your handling code here:
+        // Ensure that the done button's text is "Done"
         lblDone.setText("Done");
+
+        // Show the recipe creator
         pnlNewRecipeLayer.setVisible(true);
         
     }//GEN-LAST:event_lblAddRecipeMouseClicked
 
     private void lblCancelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCancelMouseClicked
-        // TODO add your handling code here:
+        // Reset all the fields in the recipe creator
         txtName.setText("");
-        if (!imagePath.isBlank() && lblDone.getText().equals("Done")) {
-            File oldImage = new File("src" + imagePath);
-            oldImage.delete();
+
+        // Delete the image if we aren't editing an existing recipe or the image has been changed
+        if (lblDone.getText().equals("Done") || oldImage != null) {
+            deleteImage();
         }
         lblImage.setIcon(null);
         imagePath = "";
         txtNewIngredients.setText("");
         txtNewDirections.setText("");
         
-        
-        
+        // Hide the recipe creator
         pnlNewRecipeLayer.setVisible(false);
         
+        // Display the recipes
         readDb();
         drawRecipes(pnlCookbookResults, 1);
+
+        // Reset the backup image
+        oldImage = null;
     }//GEN-LAST:event_lblCancelMouseClicked
 
     private void lblDoneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblDoneMouseClicked
-        // TODO add your handling code here:
-        
         // Variables
         String name = txtName.getText();
         String image = imagePath;
         String ingredientList = txtNewIngredients.getText().replace("\n", "\u222B");
         String directionList = txtNewDirections.getText().replace("\n", "\u222B");
        
-        // Replace empty variables with null
+        // Read from the database
+        readDb();
+
+        // Replace empty variables with " "
         if (name.equals("")) {
             name = " ";
         }
@@ -1322,96 +1478,131 @@ public class frmCookbookJW extends javax.swing.JFrame {
             directionList = " ";
         }
         
-        try {
-            if (lblDone.getText().equals("Done")) {
-                readDb(name, image, ingredientList, directionList);
-            } else {
-                readDb();
-                names[buttonIndex] = name;
-                imagePaths[buttonIndex] = image;
-                ingredientLists[buttonIndex] = ingredientList;
-                directionLists[buttonIndex] = directionList;
-            }
-            FileWriter csvWriter = new FileWriter("src/" + dbPath);
-            
-            for (int i = 0; i < names.length; i ++) {
-                csvWriter.append(names[i] + ",");
-                csvWriter.append(imagePaths[i] + ",");
-                csvWriter.append(ingredientLists[i] + ",");
-                csvWriter.append(directionLists[i] + "\n");
-            }
-
-            csvWriter.flush();
-            csvWriter.close();
-        } catch (IOException e) {
-            System.out.println("No database found!");
+        // Check if the name already exists and if it does, tell the user the name must be unique, and exit
+        if (indexOf(names, name) != -1 && (lblDone.getText().equals("Done") || indexOf(names, name) != buttonIndex)) {
+            txtName.setText("Name must be unique.");
+            return;
         }
 
-        readDb();
+        // Check if the user is creating a new recipe, or editing an existing recipe
+        if (lblDone.getText().equals("Done")) {
+            // Create a new recipe
+            readDb();
+            names = appendBeginning(names, name);
+            imagePaths = appendBeginning(imagePaths, image);
+            ingredientLists = appendBeginning(ingredientLists, ingredientList);
+            directionLists = appendBeginning(directionLists, directionList);
+        } else {
+            // Update the existing recipe
+            readDb();
+            names[buttonIndex] = name;
+            imagePaths[buttonIndex] = image;
+            ingredientLists[buttonIndex] = ingredientList;
+            directionLists[buttonIndex] = directionList;
+        }
+
+        // Write data to the database
+        writeDb();
+
+        // Display the recipes
         drawRecipes(pnlCookbookResults, 1);
         
+        // Reset all of the fields in the recipe creator
         imagePath = "";
-        lblImage.setIcon(null);
-        
         pnlNewRecipeLayer.setVisible(false);
         txtName.setText("");
-        if (!imagePath.isBlank()) {
-            File oldImage = new File("src" + imagePath);
-            oldImage.delete();
-            lblImage.setIcon(null);
-        }
+        lblImage.setIcon(null);
         txtNewIngredients.setText("");
         txtNewDirections.setText("");
+
+        // Delete the backup image
+        if (oldImage != null) {
+            oldImage.delete();
+        }
+        oldImage = null;
     }//GEN-LAST:event_lblDoneMouseClicked
 
     private void lblImageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblImageMouseClicked
-        // TODO add your handling code here:
-        lblImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/loading.png")));
-        int returnVal = fchUpload.showOpenDialog(this);
-        if (returnVal == javax.swing.JFileChooser.APPROVE_OPTION) {
-                    if (!imagePath.equals("")) {
-                        File oldImage = new File("src" + imagePath);
-                        oldImage.delete();
-                        lblImage.setIcon(null);
-                    }
-            
-            
-            File imageFile = fchUpload.getSelectedFile();
-            try {
-                BufferedImage uploadedImage = ImageIO.read(imageFile);
+        // Variables
+        int returnVal;
+        String imageName;
 
-                BufferedImage resizedImage = new BufferedImage(270, 150, BufferedImage.TYPE_INT_RGB);
-                java.awt.Graphics2D graphics2D = resizedImage.createGraphics();
+        File imageFile;
+        BufferedImage uploadedImage;
+        BufferedImage resizedImage;
+        java.awt.Graphics2D graphics2D;
+        FileFilter filter;
+        
+        // Display the loading icon
+        lblImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/loading.png")));
+
+        // Set the file filter to image files
+        filter = new FileNameExtensionFilter("Image Files (*.png, *.jpg, *.jpeg)","png", "jpg", "jpeg");
+        fchUpload.addChoosableFileFilter(filter);
+        fchUpload.setAcceptAllFileFilterUsed(false);
+
+        // Display the file upload dialog
+        returnVal = fchUpload.showOpenDialog(this);
+
+        // Check to see if the user clicked "Open"
+        if (returnVal == javax.swing.JFileChooser.APPROVE_OPTION) {
+            // Store the old image just in case
+            if (oldImage == null && lblDone.getText().equals("Update Recipe")) {
+                oldImage = new File("src" + imagePaths[buttonIndex]);
+            } else {
+                // Delete any previously selected images
+                deleteImage();
+            }
+
+            // Get the user selected file
+            imageFile = fchUpload.getSelectedFile();
+
+            try {
+                // Convert the file to an image
+                uploadedImage = ImageIO.read(imageFile);
+
+                // Resize the image
+                resizedImage = new BufferedImage(270, 150, BufferedImage.TYPE_INT_RGB);
+                graphics2D = resizedImage.createGraphics();
                 graphics2D.drawImage(uploadedImage, 0, 0, 270, 150, null);
                 graphics2D.dispose();
-                String imageName = String.valueOf(System.currentTimeMillis());
+
+                // Set a unique name for the image
+                imageName = String.valueOf(System.currentTimeMillis());
+
+                // Save the image
                 ImageIO.write(resizedImage, "jpg", new File("src/images/" + imageName + ".jpg"));
+
+                // Save the image path
                 imagePath = "/images/" + imageName + ".jpg";
-                System.out.println(imagePath);
+
+                // Wait until the image has been saved
                 while (getClass().getResource(imagePath) == null) {}
                 
+                // Display the image
                 lblImage.setIcon(new javax.swing.ImageIcon(resizedImage));
 
             } catch (IOException e) {
-                System.out.println("problem accessing file" + imageFile.getAbsolutePath());
+                System.out.println("Problem accessing file" + imageFile.getAbsolutePath());
             }
         } else {
+            // Remove the loading icon
             if (!imagePath.equals("")) {
                 lblImage.setIcon(new javax.swing.ImageIcon(getClass().getResource(imagePath)));
             } else {
                 lblImage.setIcon(null);
             }
-            System.out.println("File access cancelled by user.");
         }
     }//GEN-LAST:event_lblImageMouseClicked
 
     private void mnuEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuEditActionPerformed
-        // TODO add your handling code here:
         // Variables
         int index = buttonIndex;
         
+        // Read from the database
         readDb();
         
+        // Show all of the recipe data in the recipe creator
         txtName.setText(names[index]);
         if (!imagePaths[index].isBlank()) {
             lblImage.setIcon(new javax.swing.ImageIcon(getClass().getResource(imagePaths[index])));
@@ -1419,164 +1610,127 @@ public class frmCookbookJW extends javax.swing.JFrame {
         imagePath = imagePaths[index];
         txtNewIngredients.setText(ingredientLists[index].replace( "\u222B", "\n"));
         txtNewDirections.setText(directionLists[index].replace("\u222B", "\n"));
+
+        // Change the done button text to "Update Recipe"
         lblDone.setText("Update Recipe");
         
+        // Show the recipe creator
         pnlNewRecipeLayer.setVisible(true);
         
-        lblCookbookSidebar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/cookbookSelected.png")));
-        lblRecipeSidebar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/recipe.png")));
-        lblSearchSidebar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/search.png")));
-        
-        lblCookbookSidebar.setFont(new java.awt.Font("Gill Sans MT", 1, 18));
-        lblRecipeSidebar.setFont(new java.awt.Font("Gill Sans MT", 0, 18));
-        lblSearchSidebar.setFont(new java.awt.Font("Gill Sans MT", 0, 18));
-        
-        pnlCookbookLayer.setVisible(true);
-        pnlRecipeLayer.setVisible(false);
-        pnlSearchLayer.setVisible(false);
+        // Switch to the cookbook tab
+        switchTab(1);
         
     }//GEN-LAST:event_mnuEditActionPerformed
 
     private void mnuDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuDeleteActionPerformed
-        // TODO add your handling code here:
         // Variables
         int index = buttonIndex;
-        javax.swing.JPanel panel = buttonPanel;
         
-        try {
-            readDb();
-            
-            names = remove(names, index);
-            if (!imagePaths[index].isBlank()) {
-                File oldImage = new File("src" + imagePaths[index]);
-                oldImage.delete();
-            }
-            imagePaths = remove(imagePaths, index);
-            ingredientLists = remove(ingredientLists, index);
-            directionLists = remove(directionLists, index);
-            
-            
-            FileWriter csvWriter = new FileWriter("src/" + dbPath);
-            
-            for (int i = 0; i < names.length; i ++) {
-                csvWriter.append(names[i] + ",");
-                csvWriter.append(imagePaths[i] + ",");
-                csvWriter.append(ingredientLists[i] + ",");
-                csvWriter.append(directionLists[i] + "\n");
-            }
+        // Read from the database
+        readDb();
+        
+        // Delete the image
+        imagePath = imagePaths[index];
+        deleteImage();
 
-            csvWriter.flush();
-            csvWriter.close();
-            
-            readDb();
-            drawRecipes(pnlSearchResults, 0);
-            drawRecipes(pnlCookbookResults, 1);
-            
-            
-            lblCookbookSidebar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/cookbookSelected.png")));
-            lblRecipeSidebar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/recipe.png")));
-            lblSearchSidebar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/search.png")));
+        // Remove the recipe from the name, image, ingredient and directions arrays.
+        names = remove(names, index);
+        imagePaths = remove(imagePaths, index);
+        ingredientLists = remove(ingredientLists, index);
+        directionLists = remove(directionLists, index);
+        
+        // Write data to the database
+        writeDb();
+        
+        // Display the recipes
+        drawRecipes(pnlSearchResults, 0);
+        drawRecipes(pnlCookbookResults, 1);
+        
+        // Hide the recipe creator
+        pnlNewRecipeLayer.setVisible(false);
 
-            lblCookbookSidebar.setFont(new java.awt.Font("Gill Sans MT", 1, 18));
-            lblRecipeSidebar.setFont(new java.awt.Font("Gill Sans MT", 0, 18));
-            lblSearchSidebar.setFont(new java.awt.Font("Gill Sans MT", 0, 18));
-
-            pnlCookbookLayer.setVisible(true);
-            pnlRecipeLayer.setVisible(false);
-            pnlSearchLayer.setVisible(false);
-            
-            recipeIndex = 0;
-            } catch (IOException e) {
-                System.out.println("Database not found!");
-            }
+        // Switch to the cookbook tab
+        switchTab(1);
+        
+        // Reset the recipe index;
+        recipeIndex = 0;
         
     }//GEN-LAST:event_mnuDeleteActionPerformed
 
     private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditActionPerformed
-        // TODO add your handling code here:
+        // Check if there is a recipe selected
         if (names.length > 0) {
+            // Variables
             int x = java.awt.MouseInfo.getPointerInfo().getLocation().x - pnlRecipe.getLocationOnScreen().x;
             int y = java.awt.MouseInfo.getPointerInfo().getLocation().y - pnlRecipe.getLocationOnScreen().y;
 
-            pmnEdit.show(pnlRecipe, x, y);
             buttonIndex = recipeIndex;
             buttonPanel = pnlCookbookResults;
+
+            // Show the popup meny
+            pmnEdit.show(pnlRecipe, x, y);
         }
     }//GEN-LAST:event_btnEditActionPerformed
 
-    private void pnlSidebarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlSidebarMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_pnlSidebarMouseClicked
-
     private void lblCookbookSidebarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCookbookSidebarMouseClicked
-        // TODO add your handling code here:
-
+        // Display the recipes
+        if (oldImage != null) {
+            System.out.println(oldImage.getName());
+        }
         readDb();
         drawRecipes(pnlCookbookResults, 1);
 
-        lblCookbookSidebar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/cookbookSelected.png")));
-        lblRecipeSidebar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/recipe.png")));
-        lblSearchSidebar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/search.png")));
-
-        lblCookbookSidebar.setFont(new java.awt.Font("Gill Sans MT", 1, 18));
-        lblRecipeSidebar.setFont(new java.awt.Font("Gill Sans MT", 0, 18));
-        lblSearchSidebar.setFont(new java.awt.Font("Gill Sans MT", 0, 18));
-
-        pnlCookbookLayer.setVisible(true);
-        pnlRecipeLayer.setVisible(false);
-        pnlSearchLayer.setVisible(false);
+        // Switch to the cookbook tab
+        switchTab(1);
     }//GEN-LAST:event_lblCookbookSidebarMouseClicked
 
     private void lblRecipeSidebarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblRecipeSidebarMouseClicked
-        // TODO add your handling code here:
         //Variables
         String regex = "\u222B";
-
         int index = recipeIndex;
 
+        // Read from the database
         readDb();
 
+        // Check that the cookbook isn't empty
         if (names.length > 0) {
+            // Display the recipe name, ingredients and directions
             lblRecipeName.setText(names[index]);
             lstIngredients.setListData(ingredientLists[index].split(regex));
             lstDirections.setListData(directionLists[index].split(regex));
+        } else {
+            // Reset all the fields
+            lblRecipeName.setText("");
+            lstIngredients.setListData(new String [0]);
+            lstDirections.setListData(new String [0]);
         }
 
-        lblCookbookSidebar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/cookbook.png")));
-        lblRecipeSidebar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/recipeSelected.png")));
-        lblSearchSidebar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/search.png")));
-
-        lblCookbookSidebar.setFont(new java.awt.Font("Gill Sans MT", 0, 18));
-        lblRecipeSidebar.setFont(new java.awt.Font("Gill Sans MT", 1, 18));
-        lblSearchSidebar.setFont(new java.awt.Font("Gill Sans MT", 0, 18));
-
-        pnlCookbookLayer.setVisible(false);
-        pnlRecipeLayer.setVisible(true);
-        pnlSearchLayer.setVisible(false);
+        // Show the recipe tab
+        switchTab(2);
     }//GEN-LAST:event_lblRecipeSidebarMouseClicked
 
     private void lblSearchSidebarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSearchSidebarMouseClicked
-        // TODO add your handling code here:
-
+        // Display the recipes
         readDb();
         drawRecipes(pnlSearchResults, 0);
 
+        // Reset the search field
         txtSearch.setText("");
 
-        lblCookbookSidebar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/cookbook.png")));
-        lblRecipeSidebar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/recipe.png")));
-        lblSearchSidebar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/searchSelected.png")));
-
-        lblCookbookSidebar.setFont(new java.awt.Font("Gill Sans MT", 0, 18));
-        lblRecipeSidebar.setFont(new java.awt.Font("Gill Sans MT", 0, 18));
-        lblSearchSidebar.setFont(new java.awt.Font("Gill Sans MT", 1, 18));
-
-        pnlCookbookLayer.setVisible(false);
-        pnlRecipeLayer.setVisible(false);
-        pnlSearchLayer.setVisible(true);
+        switchTab(0);
 
     }//GEN-LAST:event_lblSearchSidebarMouseClicked
 
+    // Empty Methods
+    private void pnlSidebarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlSidebarMouseClicked
+        // EMPTY
+    }//GEN-LAST:event_pnlSidebarMouseClicked
+    private void fchUploadActionPerformed(java.awt.event.ActionEvent evt) {
+        // EMPTY
+    }
+    private void txtNameActionPerformed(java.awt.event.ActionEvent evt) {
+        // EMPTY
+    }
     /**
      * @param args the command line arguments
      */
