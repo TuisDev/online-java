@@ -27,7 +27,6 @@ public class frmCookbookJW extends javax.swing.JFrame {
     int buttonIndex;
     int recipeIndex = 0;
     File oldImage = null;
-    javax.swing.JPanel buttonPanel;
     
     String [] names = {};
     String [] imagePaths = {};
@@ -246,7 +245,7 @@ public class frmCookbookJW extends javax.swing.JFrame {
         // Check that the image exists
         if (!imagePath.isBlank()) {
             // Delete the image
-            File image = new File("src" + imagePath);
+            File image = new File("build/classes" + imagePath);
             image.delete();
         }
 
@@ -314,7 +313,7 @@ public class frmCookbookJW extends javax.swing.JFrame {
         // Make sure the database exists
         try {
             // Create the CSV reader
-            csvFile = new FileReader("src" + dbPath);
+            csvFile = new FileReader("build/classes" + dbPath);
             csvReader = new BufferedReader(csvFile);
 
                 // Read data into the database
@@ -347,7 +346,7 @@ public class frmCookbookJW extends javax.swing.JFrame {
         // Make sure the database exists
         try {
             // Create the CSV writer
-            csvWriter = new FileWriter("src/" + dbPath);
+            csvWriter = new FileWriter("build/classes" + dbPath);
             
             // Write data to the database
             for (int i = 0; i < names.length; i ++) {
@@ -533,7 +532,7 @@ public class frmCookbookJW extends javax.swing.JFrame {
         drawRecipes(pnlSearchResults, 0);
 
         // Delete any unused images that might be leftover
-        File [] files = new File("src/images/").listFiles();
+        File [] files = new File("build/classes/images/").listFiles();
 
         for (File file : files) {
             if (indexOf(imagePaths, "/images/" + file.getName()) == -1) {
@@ -1548,7 +1547,7 @@ public class frmCookbookJW extends javax.swing.JFrame {
         if (returnVal == javax.swing.JFileChooser.APPROVE_OPTION) {
             // Store the old image just in case
             if (oldImage == null && lblDone.getText().equals("Update Recipe")) {
-                oldImage = new File("src" + imagePaths[buttonIndex]);
+                oldImage = new File("build/classes" + imagePaths[buttonIndex]);
             } else {
                 // Delete any previously selected images
                 deleteImage();
@@ -1571,7 +1570,7 @@ public class frmCookbookJW extends javax.swing.JFrame {
                 imageName = String.valueOf(System.currentTimeMillis());
 
                 // Save the image
-                ImageIO.write(resizedImage, "jpg", new File("src/images/" + imageName + ".jpg"));
+                ImageIO.write(resizedImage, "jpg", new File("build/classes/images/" + imageName + ".jpg"));
 
                 // Save the image path
                 imagePath = "/images/" + imageName + ".jpg";
